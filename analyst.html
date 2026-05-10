@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>César España — Analista &amp; Científico de Datos · IA</title>
+<meta name="description" content="Portafolio de César Libardo España Salguero como analista y científico de datos: Python, Pandas, SQL, Power BI, scikit-learn, Maestría oficial en IA (Roma)." />
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315131c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' fill='%23c8a8ff' text-anchor='middle'%3Ec%3C/text%3E%3C/svg%3E" />
+
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Estilos (todo en un solo archivo, secciones marcadas) -->
+<link rel="stylesheet" href="analyst.css" />
+</head>
+
+<body data-screen-label="Analyst" class="view-data">
+
+<!-- Capa de fondo: red neuronal global -->
+<canvas id="ambientNet" aria-hidden="true"></canvas>
+
+
+<!-- ===================== NAV ===================== -->
+<nav class="top">
+  <div class="wrap row">
+    <a class="brand" href="index.html">
+      <span class="mark">c</span>
+      <span>César España</span>
+      <span class="mono muted">/ data &amp; ia</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#roles">Roles</a>
+      <a href="#metrics">Métricas</a>
+      <a href="#about">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#education">Educación</a>
+    </div>
+
+    <div class="nav-right">
+      <a class="persp-switch" href="dev.html" title="Cambiar a perspectiva Full-Stack">
+        <span class="mono muted">cambiar a</span>
+        <span>Full-Stack Dev</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="btn btn-primary" href="assets/Cesar-Espana-CV.pdf" download>Descargar CV <span class="arrow">↓</span></a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <div class="hero-grid"><canvas id="netCanvas"></canvas></div>
+
+  <div class="wrap">
+    <div class="hero-main">
+
+      <!-- foto -->
+      <div class="portrait">
+        <img src="assets/cesar.jpg" alt="César Libardo España Salguero" />
+      </div>
+
+      <!-- texto -->
+      <div>
+        <span class="eyebrow">Portafolio Data · v2026</span>
+
+        <h1>
+          César España<br/>
+          <span class="serif">Data Analyst &amp; Científico.</span>
+        </h1>
+
+        <p class="lede">
+          Analista y científico de datos en formación de IA. Limpio datasets, exploro patrones,
+          entreno modelos con <b style="color:var(--text); font-weight:500">Python &amp; scikit-learn</b>
+          y diseño dashboards en Power BI que cualquier equipo puede leer sin abrir un Jupyter.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="assets/Cesar-Espana-CV.pdf" download>Descargar CV <span class="arrow">↓</span></a>
+          <a class="btn" href="#projects">Ver proyectos <span class="arrow">→</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/cesar-libardo-espana-salguero-analista-de-datos-developer/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+        </div>
+
+        <div class="meta-row">
+          <span><b>Florencia</b> · Caquetá, Colombia</span>
+          <span><b>Idiomas</b> · ES nativo · EN B1</span>
+          <span><b>Maestría IA</b> · Roma · 2025–</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+<!-- ===================== DOS ROLES (separación clara) ===================== -->
+<section id="roles">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">00 · Dos disciplinas</span>
+        <h2>Un perfil, <span class="serif">dos roles</span> que se potencian.</h2>
+      </div>
+      <p>Datos para entender el problema. Código para construir la solución.</p>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="roles">
+
+      <!-- ROL 1: DATA -->
+      <article class="role data reveal">
+        <div class="role-head">
+          <span class="role-num">/01</span>
+          <span class="role-tag">Analista &amp; Data Science</span>
+        </div>
+        <h3>Convierto <span class="serif">datos en decisiones.</span></h3>
+        <p>Limpio datasets, exploro patrones, entreno modelos y diseño dashboards
+        que cualquier equipo puede leer sin abrir un Jupyter.</p>
+        <ul class="role-stack">
+          <li class="key">Python</li>
+          <li class="key">Pandas</li>
+          <li class="key">SQL</li>
+          <li class="key">Power BI</li>
+          <li>scikit-learn</li>
+          <li>ML supervisado</li>
+          <li>Feature engineering</li>
+          <li>Excel avanzado</li>
+        </ul>
+        <div class="role-foot">
+          <span class="role-stat"><b>−40%</b> tiempo de reportes</span>
+          <a href="#projects" class="role-link">Casos de datos →</a>
+        </div>
+      </article>
+
+      <!-- ROL 2: FULL-STACK JAVA -->
+      <article class="role dev reveal">
+        <div class="role-head">
+          <span class="role-num">/02</span>
+          <span class="role-tag">Full-Stack · Java Spring Boot</span>
+        </div>
+        <h3>Construyo <span class="serif">producto que funciona.</span></h3>
+        <p>Diseño e implemento aplicaciones web completas — del schema MySQL a la UI —
+        con APIs sólidas en Java Spring Boot y Node.js.</p>
+        <ul class="role-stack">
+          <li class="key">Java</li>
+          <li class="key">Spring Boot</li>
+          <li class="key">MySQL</li>
+          <li class="key">REST APIs</li>
+          <li>Node.js</li>
+          <li>.NET</li>
+          <li>JavaScript</li>
+          <li>HTML / CSS</li>
+          <li>Git</li>
+        </ul>
+        <div class="role-foot">
+          <span class="role-stat"><b>+5</b> clientes en producción</span>
+          <a href="#projects" class="role-link">Casos de software →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== MÉTRICAS ===================== -->
+<section id="metrics">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">01 · Highlights</span>
+        <h2>Tres números que <span class="serif">me describen.</span></h2>
+      </div>
+      <p>Indicadores extraídos de mi trabajo real: clientes freelance, formación activa y resultados medibles.</p>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="metrics">
+      <article class="metric reveal">
+        <div>
+          <div class="label">— Eficiencia entregada</div>
+          <div class="num"><span class="sign">−</span><span data-count="40">0</span><span class="unit">%</span></div>
+          <p class="desc">Reducción del tiempo de generación de reportes en clientes locales gracias a dashboards en Power BI y Excel integrados con bases SQL.</p>
+          <p class="ctx">Fuente: clientes activos · 2024–presente</p>
+        </div>
+        <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
+          <path class="bg" d="M0 28 L240 28"/>
+          <path class="fg" d="M0 28 C 30 20, 50 22, 80 18 S 140 8, 240 6"/>
+        </svg>
+      </article>
+
+      <article class="metric cyan reveal">
+        <div>
+          <div class="label">— Impacto en clientes</div>
+          <div class="num"><span class="sign">+</span><span data-count="5">0</span><span class="unit">clientes</span></div>
+          <p class="desc">Aplicaciones web y soluciones de datos para empresas del sector servicios — automatizando flujos de inventario, reservas y reportería con backend Java Spring Boot.</p>
+          <p class="ctx">Fuente: trabajo freelance · 2024–25</p>
+        </div>
+        <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
+          <path class="bg" d="M0 28 L240 28"/>
+          <path class="fg" d="M0 30 L 40 26 L 80 22 L 120 18 L 160 16 L 200 12 L 240 8"/>
+        </svg>
+      </article>
+
+      <article class="metric amber reveal">
+        <div>
+          <div class="label">— Formación en paralelo</div>
+          <div class="num"><span data-count="3">0</span><span class="unit">programas activos</span></div>
+          <p class="desc">Maestría oficial en IA (Roma), Máster en IA &amp; Data Science (Dev Senior Code) y bootcamp Full-Stack Java (Generations Colombia) — todos en curso a la vez.</p>
+          <p class="ctx">Roma · Dev Senior Code · Generations Colombia</p>
+        </div>
+        <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
+          <path class="bg" d="M0 28 L240 28"/>
+          <path class="fg" d="M0 28 L 60 22 L 90 22 L 150 14 L 180 14 L 240 6"/>
+        </svg>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SOBRE MÍ ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">02 · Sobre mí</span>
+        <h2>Analítico por método, <span class="serif">curioso</span> por defecto.</h2>
+      </div>
+      <p>Nacido entre la selva amazónica colombiana y la consola — donde el dato cuenta historias.</p>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="about-grid">
+      <div>
+        <p>Trabajo en la intersección de <b style="color:var(--text)">datos, IA y producto</b>. Me formé como Ingeniero en Sistemas en la Universidad de la Amazonia y hoy combino una maestría oficial en IA en Italia con desarrollo full-stack para clientes reales.</p>
+        <p>Lo que me mueve: encontrar la pregunta correcta antes que la respuesta vistosa. Limpio datos sin atajos, mido lo que importa, y diseño interfaces para que cualquiera entienda el insight sin abrir un Jupyter.</p>
+        <p>Cuando no estoy modelando o codificando, estoy aprendiendo —tres programas en paralelo no son casualidad—. Creo que el siguiente salto profesional viene de combinar rigor estadístico, ingeniería sólida y diseño que respete a quien lo usa.</p>
+      </div>
+
+      <aside class="now-card">
+        <h3>● Ahora mismo</h3>
+        <div class="now-list">
+          <div class="row"><span class="what">Maestría oficial IA <span class="muted">— Roma</span></span><span class="when">2025 →</span></div>
+          <div class="row"><span class="what">Máster IA &amp; Data Science <span class="muted">— Dev Senior Code</span></span><span class="when">2025 →</span></div>
+          <div class="row"><span class="what">Full-Stack Java <span class="muted">— Generations CO</span></span><span class="when">Mar–Jun 26</span></div>
+          <div class="row"><span class="what">Freelance: dashboards &amp; webs</span><span class="when">activo</span></div>
+          <div class="row"><span class="what">Buscando primer rol jr. en datos / IA</span><span class="when">2026</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== STACK ===================== -->
+<section id="stack">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">03 · Stack</span>
+        <h2>Herramientas con las que <span class="serif">construyo</span> a diario.</h2>
+      </div>
+      <p>Datos, modelos, código y bases — el ciclo completo de un dato hasta convertirse en decisión.</p>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="stack-grid">
+      <div class="stack-card reveal">
+        <div class="head"><div class="icon">π</div><div class="name">Data &amp; Analytics</div></div>
+        <ul><li>Python</li><li>SQL</li><li>Power BI</li><li>Excel</li><li>Pandas</li><li>Jupyter</li><li>Anaconda</li></ul>
+      </div>
+      <div class="stack-card reveal">
+        <div class="head"><div class="icon">λ</div><div class="name">Machine Learning · IA</div></div>
+        <ul><li>scikit-learn</li><li>ML supervisado</li><li>No supervisado</li><li>Clasificación</li><li>Regresión</li><li>Feature eng.</li></ul>
+      </div>
+      <div class="stack-card reveal">
+        <div class="head"><div class="icon">⌘</div><div class="name">Web &amp; Backend</div></div>
+        <ul><li>Java</li><li>Spring Boot</li><li>Node.js</li><li>.NET</li><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+      </div>
+      <div class="stack-card reveal">
+        <div class="head"><div class="icon">∑</div><div class="name">Bases &amp; Tools</div></div>
+        <ul><li>MySQL</li><li>SQL Server</li><li>Modelado</li><li>Git/GitHub</li><li>Figma</li><li>VS Code</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== EXPERIENCIA ===================== -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">04 · Experiencia</span>
+        <h2>Lo que he <span class="serif">construido</span> en producción.</h2>
+      </div>
+      <p>Trabajo freelance con clientes reales del sector servicios desde 2024.</p>
+    </div>
+    <div class="section-divider"></div>
+
+    <article class="exp reveal">
+      <div class="head">
+        <div>
+          <h3>Data Analyst &amp; Full-Stack Developer · Freelance</h3>
+          <div class="role">Varios clientes — Remoto · Florencia, Colombia</div>
+        </div>
+        <span class="when">Mar 2024 — Actual</span>
+      </div>
+      <ul>
+        <li><b>Dashboards interactivos en Power BI y Excel</b> para monitoreo de ventas y operaciones, reduciendo en <span class="hl">+40%</span> el tiempo de generación de reportes.</li>
+        <li><b>Aplicaciones web full-stack</b> con Java Spring Boot, Node.js y .NET integradas con MySQL — automatizando procesos clave para <span class="hl">+5 clientes</span> del sector servicios.</li>
+        <li>Acompañé a cada cliente desde la <b>recolección de requisitos</b> hasta el despliegue, con iteraciones cortas y entregables medibles.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== PROYECTOS ===================== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">05 · Proyectos</span>
+        <h2>Datos con propósito, <span class="serif">interfaces</span> que se entienden.</h2>
+      </div>
+      <p>Selección de proyectos representativos. Solicita el repositorio o caso de estudio completo.</p>
+    </div>
+    <div class="section-divider"></div>
+
+    <div class="projects">
+
+      <article class="proj reveal">
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">Python · Pandas</span><span class="tag">EDA</span>
+        </div>
+        <div class="preview">
+          <svg viewBox="0 0 200 100" style="width:90%; height:80%">
+            <rect x="6" y="6" width="188" height="88" rx="4" fill="none" stroke="var(--line)"/>
+            <g fill="var(--data)" opacity="0.85">
+              <rect x="20" y="40" width="9" height="40"/><rect x="48" y="48" width="9" height="32"/>
+              <rect x="76" y="42" width="9" height="38"/><rect x="104" y="36" width="9" height="44"/>
+              <rect x="132" y="20" width="9" height="60"/>
+            </g>
+            <g fill="var(--dev)" opacity="0.7">
+              <rect x="34" y="34" width="9" height="46"/><rect x="62" y="30" width="9" height="50"/>
+              <rect x="90" y="22" width="9" height="58"/><rect x="118" y="28" width="9" height="52"/>
+              <rect x="146" y="14" width="9" height="66"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Análisis ICFES <span class="serif">— Power BI Dashboard</span></h3>
+        <p>Recopilé, limpié y transformé datasets ICFES con Python (pandas), construyendo dashboards para analizar rendimiento por región, institución y área.</p>
+        <div class="foot"><span>2024 · cliente educativo</span><span>caso de estudio →</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tags">
+          <span class="tag">Java · Spring Boot</span><span class="tag">MySQL</span><span class="tag">Web</span>
+        </div>
+        <div class="preview">
+          <svg viewBox="0 0 160 100" style="width:90%; height:80%">
+            <rect x="6" y="6" width="148" height="88" rx="4" fill="var(--bg-card-2)" stroke="var(--line)"/>
+            <rect x="14" y="14" width="56" height="6" rx="2" fill="var(--line-2)"/>
+            <rect x="14" y="48" width="40" height="22" rx="3" fill="var(--data)" opacity="0.7"/>
+            <rect x="58" y="48" width="40" height="22" rx="3" fill="var(--dev)"  opacity="0.55"/>
+            <rect x="102" y="48" width="40" height="22" rx="3" fill="var(--warn)" opacity="0.55"/>
+          </svg>
+        </div>
+        <h3>Apps web <span class="serif">para PYMEs</span></h3>
+        <p>Plataformas full-stack que automatizan inventario, reservas y reportería para clientes del sector servicios.</p>
+        <div class="foot"><span>+5 clientes · 2024–25</span><span>solicitar demo →</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tags">
+          <span class="tag">scikit-learn</span><span class="tag">en curso</span>
+        </div>
+        <div class="preview">
+          <svg viewBox="0 0 160 100" style="width:90%; height:80%">
+            <circle cx="40" cy="50" r="20" fill="none" stroke="var(--data)" stroke-dasharray="3 3"/>
+            <circle cx="100" cy="60" r="18" fill="none" stroke="var(--dev)" stroke-dasharray="3 3"/>
+            <g fill="var(--data)"><circle cx="34" cy="46" r="2"/><circle cx="42" cy="52" r="2"/><circle cx="38" cy="56" r="2"/><circle cx="46" cy="44" r="2"/></g>
+            <g fill="var(--dev)"><circle cx="98" cy="58" r="2"/><circle cx="104" cy="62" r="2"/><circle cx="96" cy="66" r="2"/><circle cx="108" cy="56" r="2"/></g>
+          </svg>
+        </div>
+        <h3>Modelos de clasificación <span class="serif">supervisada</span></h3>
+        <p>Experimentos de ML con feature engineering y validación, parte de la maestría en IA.</p>
+        <div class="foot"><span>Roma · 2025 →</span><span>en desarrollo →</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tags"><span class="tag">¿Tu próximo proyecto?</span></div>
+        <h3>Tienes un dataset, una idea o un problema que <span class="serif">resolver con datos.</span></h3>
+        <p>Trabajo por proyecto o por horas — desde un dashboard puntual hasta un MVP completo con backend Java Spring Boot y modelo.</p>
+        <div class="foot">
+          <a class="btn btn-primary" href="mailto:cesarespana.dev@gmail.com">Escríbeme <span class="arrow">→</span></a>
+          <span>respuesta &lt; 24h</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== EDUCACIÓN ===================== -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-tag">06 · Educación</span>
+        <h2>Una <span class="serif">formación continua</span> en IA, datos y software.</h2>
+      </div>
+      <p>Tres programas activos en paralelo + ingeniería de base.</p>
+    </div>
+    <div class="section-divider"></div>
+
+    <ol class="edu-list">
+      <li class="edu-item">
+        <div>
+          <h4>Maestría Oficial en Inteligencia Artificial</h4>
+          <div class="org">Università G. Marconi · Roma, Italia</div>
+          <span class="badge"><span class="d"></span>en curso</span>
+        </div>
+        <span class="when">Oct 2025 — Actual</span>
+      </li>
+      <li class="edu-item">
+        <div>
+          <h4>Máster en IA &amp; Data Science</h4>
+          <div class="org">Dev Senior Code</div>
+          <span class="badge"><span class="d"></span>en curso</span>
+        </div>
+        <span class="when">Oct 2025 — Actual</span>
+      </li>
+      <li class="edu-item">
+        <div>
+          <h4>Desarrollador Full-Stack Java</h4>
+          <div class="org">Generations Colombia · bootcamp</div>
+          <span class="badge"><span class="d"></span>iniciando</span>
+        </div>
+        <span class="when">Mar — Jun 2026</span>
+      </li>
+      <li class="edu-item">
+        <div>
+          <h4>Ingeniero en Sistemas</h4>
+          <div class="org">Universidad de la Amazonia · Florencia, CO</div>
+        </div>
+        <span class="when">Feb 2018 — Ago 2025</span>
+      </li>
+    </ol>
+
+    <!-- Diplomados / Certificaciones complementarias -->
+    <h3 class="cert-title">Diplomados &amp; Certificaciones</h3>
+    <ul class="cert-list">
+      <li class="cert" data-pdf="assets/diplomas/ia-ml-data-science.pdf" tabindex="0">
+        <h4>Especialista en IA, Machine Learning y Ciencia de Datos</h4>
+        <span class="cert-org">Diplomado certificado</span>
+        <span class="cert-when">Mar 2026</span>
+      </li>
+      <li class="cert" data-pdf="assets/diplomas/ds4a-correlation-one.pdf" tabindex="0">
+        <h4>DS4A Colombia · Fundamentos en Analítica de Datos</h4>
+        <span class="cert-org">Correlation One</span>
+        <span class="cert-when">2024</span>
+      </li>
+      <li class="cert" data-pdf="assets/diplomas/spring-boot-angular.pdf" tabindex="0">
+        <h4>Full Stack Empresarial con Spring Boot &amp; Angular</h4>
+        <span class="cert-org">Dev Senior Code</span>
+        <span class="cert-when">Sep 2025</span>
+      </li>
+      <li class="cert" data-pdf="assets/diplomas/talento-tech-fullstack.pdf" tabindex="0">
+        <h4>Desarrollo Web Full-Stack — Bootcamp</h4>
+        <span class="cert-org">TalentoTech · MinTIC (159 h)</span>
+        <span class="cert-when">Dic 2024</span>
+      </li>
+      <li class="cert" data-pdf="assets/diplomas/mision-tic.pdf" tabindex="0">
+        <h4>Misión TIC · Ruta de Aprendizaje 2</h4>
+        <span class="cert-org">MinTIC Colombia</span>
+        <span class="cert-when">2023</span>
+      </li>
+      <li class="cert" data-pdf="assets/diplomas/oracle-alura.pdf" tabindex="0">
+        <h4>Oracle Next Education · 6 formaciones</h4>
+        <span class="cert-org">Alura · Oracle (343 h)</span>
+        <span class="cert-when">Jun 2023</span>
+      </li>
+      <li class="cert" data-pdf="assets/diplomas/egg-programacion-0.pdf" tabindex="0">
+        <h4>Programación desde 0</h4>
+        <span class="cert-org">Egg Cooperation</span>
+        <span class="cert-when">2023</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER / CONTACTO ===================== -->
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="hello">
+        <span class="eyebrow">Contacto</span>
+        <h3>¿Hablamos de <span class="serif">tu próximo proyecto?</span></h3>
+        <p>Disponible para freelance, colaboraciones y mi primer rol full-time en datos / IA. Respuesta en menos de 24 horas.</p>
+        <a class="btn btn-primary" href="mailto:cesarespana.dev@gmail.com">cesarespana.dev@gmail.com <span class="arrow">→</span></a>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <a href="https://www.linkedin.com/in/cesar-libardo-espana-salguero-analista-de-datos-developer/" target="_blank" rel="noopener">LinkedIn →</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub →</a>
+        <a href="assets/Cesar-Espana-CV.pdf" download>Descargar CV ↓</a>
+        <a href="mailto:cesarespana.dev@gmail.com">Correo →</a>
+        <a href="tel:+573105885140">+57 310 588 5140 →</a>
+      </div>
+      <div>
+        <h4>Sitio</h4>
+        <a href="#roles">Roles</a>
+        <a href="#metrics">Métricas</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#stack">Stack</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#education">Educación</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 César L. España S. — Construido a mano en HTML, CSS y un poco de IA.</span>
+      <span>v2026.2 · Florencia, CO</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===================== WIDGET DE IA ===================== -->
+<button class="ai-orb" id="aiOrb" aria-label="Pregúntale a la IA del portafolio">
+  <span class="glyph"></span>
+</button>
+
+<aside class="ai-panel" id="aiPanel" role="dialog" aria-label="Asistente IA">
+  <header class="ph">
+    <span class="glyph"></span>
+    <div>
+      <div class="ttl">Asistente del portafolio</div>
+      <div class="sub">// pregúntame sobre César</div>
+    </div>
+    <button class="x" id="aiClose" aria-label="Cerrar">×</button>
+  </header>
+
+  <div class="body" id="aiBody">
+    <div class="ai-msg bot">
+      Hola — soy el asistente del portafolio de César. Puedo resumir su experiencia, su stack o ayudarte a redactar un mensaje. ¿Qué quieres saber?
+    </div>
+  </div>
+
+  <div class="ai-suggestions">
+    <button class="ai-sug">¿Por qué contratarlo?</button>
+    <button class="ai-sug">Resumen en 2 frases</button>
+    <button class="ai-sug">¿Cuál es su stack de IA?</button>
+    <button class="ai-sug">Redacta un email de contacto</button>
+  </div>
+
+  <form class="ai-input" id="aiForm">
+    <input id="aiInput" placeholder="Pregunta lo que quieras…" autocomplete="off" />
+    <button type="submit">Enviar</button>
+  </form>
+</aside>
+
+
+<!-- ===================== MODAL DE DIPLOMAS ===================== -->
+<div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog">
+  <div class="pdf-modal-bg"></div>
+  <div class="pdf-modal-card">
+    <header class="pdf-modal-head">
+      <span class="pdf-modal-title" id="pdfModalTitle">Diploma</span>
+      <div class="pdf-modal-actions">
+        <a class="btn" id="pdfModalDownload" href="#" download>Descargar <span class="arrow">↓</span></a>
+        <button class="pdf-modal-close" id="pdfModalClose" aria-label="Cerrar">×</button>
+      </div>
+    </header>
+    <iframe class="pdf-modal-frame" id="pdfModalFrame" title="Diploma"></iframe>
+  </div>
+</div>
+
+<!-- ===================== SCRIPT ===================== -->
+<script src="analyst.js"></script>
+
+</body>
+</html>

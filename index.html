@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>César España — Elige una perspectiva</title>
+<meta name="description" content="César Libardo España Salguero — dos perspectivas: desarrollador Full-Stack Java Spring Boot y Analista / Científico de Datos." />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315131c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' fill='%23c8a8ff' text-anchor='middle'%3Ec%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- fondo neuronal -->
+<canvas id="ambientNet" aria-hidden="true"></canvas>
+
+<main class="chooser">
+
+  <!-- nav minimalista -->
+  <header class="ch-top">
+    <a class="brand" href="#">
+      <span class="mark">c</span>
+      <span>César España</span>
+      <span class="mono muted">/ portafolio</span>
+    </a>
+    <span class="pill"><span class="dot"></span>Disponible</span>
+  </header>
+
+  <!-- intro centrado -->
+  <section class="intro">
+    <span class="eyebrow">Portafolio · v2026</span>
+    <h1>
+      Hola, soy César.<br/>
+      <span class="serif">Elige cómo quieres conocerme.</span>
+    </h1>
+    <p class="lede">
+      Soy <b>analista y científico de datos en formación de IA</b> y también
+      <b>desarrollador full-stack Java Spring Boot</b>. Cada perfil tiene su propio
+      portafolio — entra al que más te interese; siempre puedes cambiar de perspectiva.
+    </p>
+  </section>
+
+  <!-- dos rutas -->
+  <section class="paths">
+
+    <a class="path path-dev" href="dev.html">
+      <div class="ph-top">
+        <span class="num">/01</span>
+        <span class="tag">Full-Stack · Java Spring Boot</span>
+      </div>
+      <h2>Desarrollador <span class="serif">Full-Stack.</span></h2>
+      <p>Aplicaciones web completas — del schema MySQL a la UI — con APIs sólidas
+      en Java Spring Boot, Node.js y .NET. Más de 5 clientes en producción.</p>
+      <ul class="ph-stack">
+        <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>Angular</li><li>Node.js</li><li>.NET</li><li>REST</li>
+      </ul>
+      <span class="ph-cta">Ver portafolio dev <span class="arrow">→</span></span>
+    </a>
+
+    <a class="path path-data" href="analyst.html">
+      <div class="ph-top">
+        <span class="num">/02</span>
+        <span class="tag">Data Analyst · Data Science · IA</span>
+      </div>
+      <h2>Analista &amp; <span class="serif">Científico de Datos.</span></h2>
+      <p>Dashboards que cuentan historias, modelos que predicen y pipelines que limpian.
+      Maestría oficial en IA (Roma), Power BI y Python en producción.</p>
+      <ul class="ph-stack">
+        <li>Python</li><li>Pandas</li><li>SQL</li><li>Power BI</li><li>scikit-learn</li><li>Excel</li><li>EDA</li>
+      </ul>
+      <span class="ph-cta">Ver portafolio data <span class="arrow">→</span></span>
+    </a>
+
+  </section>
+
+  <!-- footer minimalista del chooser -->
+  <footer class="ch-foot">
+    <div class="ch-foot-row">
+      <span class="mono muted">© 2026 — César L. España S. · Florencia, Caquetá, CO</span>
+      <div class="ch-links">
+        <a href="mailto:cesarespana.dev@gmail.com">Correo →</a>
+        <a href="https://www.linkedin.com/in/cesar-libardo-espana-salguero-analista-de-datos-developer/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="assets/Cesar-Espana-CV.pdf" download>CV ↓</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
