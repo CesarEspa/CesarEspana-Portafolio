@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/dev.css\" \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/dev/dev.css\")",
+      "Bash(mv \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/dev.js\" \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/dev/dev.js\")",
+      "Bash(mv \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/analyst.css\" \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/analyst/analyst.css\")",
+      "Bash(mv \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/analyst.js\" \"c:/Users/Cesar/Desktop/MI PORTAFOLIO WEB 2/analyst/analyst.js\")",
+      "Bash(git restore *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(git -c core.ignorecase=false add \"Documentos/Cesar-Espana-CV.pdf\" \"Documentos/cesar.jpg\")",
+      "Bash(git mv *)"
+    ]
+  }
+}
