@@ -1,8 +1,19 @@
 /* ============================================================
    PORTFOLIO DEV · CÉSAR ESPAÑA — DEV.JS
+   ─────────────────────────────────────────────────────────────
+   Estructura:
+     1. Modal de diplomas (PDF lightbox)
+     2. Reveal on scroll
+     3. Contadores numéricos
+     4. Sparklines
+     5. Asistente IA
+     6. Renderizado de proyectos (desde projects-data.js)
+     7. Sidebar: toggle responsive + scroll-spy
+     8. Main (entry point)
    ============================================================ */
 
-/* ====== MODAL DE DIPLOMAS ====== */
+
+/* ====== 1. MODAL DE DIPLOMAS ====== */
 (function diplomasModal() {
   const modal    = document.getElementById('pdfModal');
   const frame    = document.getElementById('pdfModalFrame');
@@ -45,189 +56,7 @@
 })();
 
 
-/* ====== NEURAL-NET ====== */
-/* ============================================================
-   neural-net.js
-   Canvas de fondo: puntos que se mueven y se conectan,
-   con pulsos viajando entre ellos.
-
-   Parámetros que puedes tocar (en main.js al llamar):
-     density   — qué tan poblado (más = más puntos)
-     maxLink   — distancia máxima de conexión (fracción del ancho)
-     speed     — velocidad inicial
-     pulseRate — probabilidad de que aparezca un pulso por frame
-     fixed     — true para que ocupe todo el viewport
-   ============================================================ */
-
-function makeNeuralNet(canvas, opts) {
-  const cfg = Object.assign({
-    density:   0.00012,
-    maxLink:   0.15,
-    speed:     0.6,
-    damping:   0.998,
-    wander:    0.018,
-    pulseRate: 0.10,
-    fixed:     false,
-    nodeColor: 'rgba(236,233,245,0.85)',
-    colorA:    'rgba(200,168,255,OP)',
-    colorB:    'rgba(143,213,232,OP)'
-  }, opts || {});
-
-  const ctx = canvas.getContext('2d');
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  const mouse = { x: -9999, y: -9999, active: false };
-
-  let w, h, nodes, pulses, raf;
-
-  function resize() {
-    let cssW, cssH;
-    if (cfg.fixed) {
-      cssW = window.innerWidth;
-      cssH = window.innerHeight;
-    } else {
-      const rect = canvas.parentElement.getBoundingClientRect();
-      cssW = rect.width;
-      cssH = Math.max(540, rect.height);
-    }
-    canvas.width  = Math.floor(cssW * dpr);
-    canvas.height = Math.floor(cssH * dpr);
-    canvas.style.width  = cssW + 'px';
-    canvas.style.height = cssH + 'px';
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    w = cssW;
-    h = cssH;
-  }
-
-  function init() {
-    resize();
-    const N = Math.max(20, Math.min(180, Math.round(w * h * cfg.density)));
-    nodes = [];
-    for (let i = 0; i < N; i++) {
-      nodes.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * cfg.speed,
-        vy: (Math.random() - 0.5) * cfg.speed,
-        r: Math.random() * 1.4 + 0.6,
-        ph: Math.random() * Math.PI * 2
-      });
-    }
-    pulses = [];
-  }
-
-  function spawnPulse() {
-    if (!nodes || nodes.length < 2) return;
-    const a = (Math.random() * nodes.length) | 0;
-    let b = (Math.random() * nodes.length) | 0;
-    if (a === b) b = (b + 1) % nodes.length;
-    pulses.push({ a: a, b: b, t: 0, life: 0.9 + Math.random() * 0.6 });
-  }
-
-  function frame(now) {
-    ctx.clearRect(0, 0, w, h);
-    const maxL = w * cfg.maxLink;
-
-    // edges
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i], b = nodes[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const d = Math.hypot(dx, dy);
-        if (d < maxL) {
-          const op = (1 - d / maxL) * 0.42;
-          const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
-          grad.addColorStop(0, cfg.colorA.replace('OP', op.toFixed(3)));
-          grad.addColorStop(1, cfg.colorB.replace('OP', (op * 0.6).toFixed(3)));
-          ctx.strokeStyle = grad;
-          ctx.lineWidth = 0.7;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    // pulses (señales viajando entre nodos)
-    if (Math.random() < cfg.pulseRate) spawnPulse();
-    for (let p = pulses.length - 1; p >= 0; p--) {
-      const P = pulses[p];
-      P.t += 0.012;
-      if (P.t >= P.life) { pulses.splice(p, 1); continue; }
-      const A = nodes[P.a], B = nodes[P.b];
-      if (!A || !B) { pulses.splice(p, 1); continue; }
-      const k = Math.min(1, P.t / P.life);
-      const x = A.x + (B.x - A.x) * k;
-      const y = A.y + (B.y - A.y) * k;
-      const fade = Math.sin(k * Math.PI);
-      ctx.beginPath();
-      ctx.arc(x, y, 1.6 + fade * 1.6, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(200,168,255,' + (0.95 * fade).toFixed(2) + ')';
-      ctx.shadowColor = 'rgba(200,168,255,0.9)';
-      ctx.shadowBlur = 12;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-    }
-
-    // nodes
-    for (const n of nodes) {
-      // repulsión suave del mouse
-      if (mouse.active) {
-        const dx = n.x - mouse.x, dy = n.y - mouse.y;
-        const d2 = dx * dx + dy * dy;
-        if (d2 < 14000) {
-          const f = (1 - d2 / 14000) * 0.6;
-          n.vx += (dx / Math.sqrt(d2 + 0.001)) * f;
-          n.vy += (dy / Math.sqrt(d2 + 0.001)) * f;
-        }
-      }
-      n.x += n.vx; n.y += n.vy;
-      n.vx *= cfg.damping; n.vy *= cfg.damping;
-      n.vx += (Math.random() - 0.5) * cfg.wander;
-      n.vy += (Math.random() - 0.5) * cfg.wander;
-      if (n.x < 0) { n.x = 0; n.vx *= -1; }
-      if (n.x > w) { n.x = w; n.vx *= -1; }
-      if (n.y < 0) { n.y = 0; n.vy *= -1; }
-      if (n.y > h) { n.y = h; n.vy *= -1; }
-      const tw = 0.7 + Math.sin((now || 0) * 0.002 + n.ph) * 0.3;
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = cfg.nodeColor.replace('0.85', tw.toFixed(2));
-      ctx.fill();
-    }
-
-    raf = requestAnimationFrame(frame);
-  }
-
-  function onMove(e) {
-    const r = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - r.left;
-    mouse.y = e.clientY - r.top;
-    mouse.active = true;
-  }
-  function onLeave() { mouse.active = false; mouse.x = mouse.y = -9999; }
-
-  const target = cfg.fixed ? window : canvas.parentElement;
-  target.addEventListener('mousemove', onMove, { passive: true });
-  target.addEventListener('mouseleave', onLeave);
-
-  init();
-  frame();
-  window.addEventListener('resize', () => {
-    cancelAnimationFrame(raf);
-    init();
-    frame();
-  });
-}
-
-/* ====== REVEAL ====== */
-/* ============================================================
-   reveal.js
-   - Aparición al hacer scroll (.reveal → .reveal.in)
-   - Conteo de números (data-count)
-   - Animación de las sparklines (svg path .spark .fg)
-   ============================================================ */
-
+/* ====== 2. REVEAL ON SCROLL ====== */
 function setupReveal() {
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
@@ -236,11 +65,13 @@ function setupReveal() {
         io.unobserve(e.target);
       }
     }
-  }, { threshold: 0.18 });
+  }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 }
 
+
+/* ====== 3. CONTADORES NUMÉRICOS ====== */
 function setupCounters() {
   function animateCount(el) {
     const target = +el.dataset.count;
@@ -267,6 +98,8 @@ function setupCounters() {
   document.querySelectorAll('[data-count]').forEach((el) => io.observe(el));
 }
 
+
+/* ====== 4. SPARKLINES ====== */
 function setupSparklines() {
   document.querySelectorAll('.spark .fg').forEach((p) => {
     try {
@@ -287,45 +120,40 @@ function setupSparklines() {
   });
 }
 
-/* ====== AI-ASSISTANT ====== */
-/* ============================================================
-   ai-assistant.js
-   Widget flotante "Pregúntale al portafolio".
-   Responde con window.claude.complete (si está disponible)
-   y cae a un fallback offline si no hay conexión.
-   ============================================================ */
+
+/* ====== 5. ASISTENTE IA ====== */
 
 const AI_CONTEXT = `Eres el asistente conversacional del portafolio personal de César Libardo España Salguero.
 Datos clave que conoces:
 - Nombre: César Libardo España Salguero. Ubicación: Florencia, Caquetá, Colombia.
-- Profesión: Analista de Datos y Científico de Datos en formación de IA, y Desarrollador Full-Stack (Java Spring Boot, Node.js, .NET).
+- Profesión: Desarrollador Full-Stack (Java Spring Boot, Angular, Node.js, .NET) y Analista/Científico de Datos en formación de IA.
 - Email: cesarespana.dev@gmail.com — Tel: +57 310 588 5140.
 - Educación activa (en paralelo): Maestría Oficial en Inteligencia Artificial (Università G. Marconi, Roma), Máster en IA & Data Science (Dev Senior Code), Full-Stack Java (Generations Colombia, mar–jun 2026).
 - Educación: Ingeniero de Sistemas, Universidad de la Amazonia (2018–2025).
-- Stack Data: Python, Pandas, SQL, Power BI, Excel, scikit-learn, ML supervisado y no supervisado, feature engineering.
-- Stack Dev: Java, Spring Boot, Node.js, .NET, JavaScript, HTML, CSS, MySQL, SQL Server, Git, Figma.
-- Métricas más fuertes: -40% tiempo de generación de reportes, +5 clientes en producción, 3 programas activos en paralelo.
+- Stack Dev: Java, Spring Boot, Angular, Node.js, .NET, JavaScript, HTML, CSS, MySQL, SQL Server, Git.
+- Stack Data: Python, Pandas, SQL, Power BI, Excel, scikit-learn, ML supervisado y no supervisado.
+- Métricas más fuertes: +5 clientes en producción, -40% tiempo de generación de reportes, 3 programas activos en paralelo.
 - Idiomas: Español nativo, Inglés B1.
-- Disponibilidad: freelance + busca su primer rol full-time junior en datos/IA en 2026.
+- Disponibilidad: freelance + busca su primer rol full-time junior como desarrollador en 2026.
 
 Responde SIEMPRE en español, en máximo 3 frases, con tono cercano y profesional.
 Si te piden redactar un email de contacto, escríbelo cordial, breve y con CTA claro.
 No inventes datos que no estén en este contexto.`;
 
 const AI_FALLBACK = {
-  contratar: "César combina ciencia de datos (Python, ML, Power BI) con desarrollo full-stack (Java Spring Boot, Node.js). Eso es raro y útil: puede entender el problema con datos, y construir la solución en producción. Además entrega — ya tiene +5 clientes activos.",
-  resumen: "Analista y científico de datos en formación de IA en Roma, y desarrollador full-stack con +5 clientes freelance. Reduce tiempos de reporte un 40% con Power BI y construye apps con Java Spring Boot y .NET.",
-  stack: "Para IA y datos: Python, Pandas, SQL, scikit-learn y Power BI. Para web: JavaScript, Java/Spring Boot, Node.js, .NET, MySQL.",
-  email: "Asunto: Oportunidad para colaborar\n\nHola César,\n\nVi tu portafolio y me interesa cómo combinas datos con desarrollo. Tengo un proyecto donde encajaría tu perfil — ¿te cuento por una llamada de 15 minutos esta semana?\n\nGracias,",
-  default: "Buena pregunta. Puedes preguntarme por su stack, su experiencia con clientes, su formación en IA o pedirme que redacte un email de contacto."
+  contratar: "César combina desarrollo full-stack (Java Spring Boot, Angular, Node.js) con ciencia de datos. Es raro y útil: entiende el problema con datos y construye la solución en producción. Ya tiene +5 clientes activos.",
+  resumen:   "Desarrollador full-stack Java Spring Boot con +5 clientes freelance y analista de datos en formación de IA en Roma. Construye apps web completas y APIs REST documentadas.",
+  stack:     "Backend: Java/Spring Boot, Node.js, .NET. Frontend: Angular, TypeScript, JavaScript. Datos: MySQL, SQL Server, Python, Power BI.",
+  email:     "Asunto: Oportunidad para colaborar\n\nHola César,\n\nVi tu portafolio y me interesa cómo combinas backend Java con datos. Tengo un proyecto donde encajaría tu perfil — ¿te cuento por una llamada de 15 minutos esta semana?\n\nGracias,",
+  default:   "Buena pregunta. Puedes preguntarme por su stack, su experiencia con clientes, su formación en IA o pedirme que redacte un email de contacto."
 };
 
 function fallbackAnswer(q) {
   const t = q.toLowerCase();
   if (t.includes('contrat') || t.includes('porqu') || t.includes('por qué')) return AI_FALLBACK.contratar;
-  if (t.includes('resumen') || t.includes('frase') || t.includes('quién')) return AI_FALLBACK.resumen;
-  if (t.includes('stack') || t.includes('herramienta') || t.includes('tecn')) return AI_FALLBACK.stack;
-  if (t.includes('email') || t.includes('correo') || t.includes('redacta') || t.includes('mensaje')) return AI_FALLBACK.email;
+  if (t.includes('resumen') || t.includes('frase') || t.includes('quién'))   return AI_FALLBACK.resumen;
+  if (t.includes('stack')  || t.includes('herramienta') || t.includes('tecn')) return AI_FALLBACK.stack;
+  if (t.includes('email')  || t.includes('correo') || t.includes('redacta') || t.includes('mensaje')) return AI_FALLBACK.email;
   return AI_FALLBACK.default;
 }
 
@@ -333,7 +161,6 @@ function setupAiAssistant() {
   const orb     = document.getElementById('aiOrb');
   const panel   = document.getElementById('aiPanel');
   const closeBt = document.getElementById('aiClose');
-  const askBt   = document.getElementById('askAi');
   const form    = document.getElementById('aiForm');
   const input   = document.getElementById('aiInput');
   const body    = document.getElementById('aiBody');
@@ -347,7 +174,6 @@ function setupAiAssistant() {
 
   orb.addEventListener('click', toggle);
   closeBt.addEventListener('click', close);
-  if (askBt) askBt.addEventListener('click', open);
 
   function addMsg(text, who) {
     const d = document.createElement('div');
@@ -390,11 +216,10 @@ function setupAiAssistant() {
   });
 }
 
-/* ====== RENDER PROJECTS ====== */
-/* ============================================================
-   Genera las tarjetas de proyectos desde projects-data.js.
-   Llama renderProjects(array, containerId) para poblar el grid.
-   ============================================================ */
+
+/* ====== 6. RENDERIZADO DE PROYECTOS ======
+   Lee DEV_PROJECTS (definido en ../projects-data.js)
+   y genera las tarjetas dentro de #projects-grid. */
 
 function renderProjects(projects, containerId) {
   const grid = document.getElementById(containerId);
@@ -432,7 +257,7 @@ function renderProjects(projects, containerId) {
       <div class="tags">${tags}${statusTag}</div>
       <div class="proj-preview">
         <span class="proj-glyph">${p.glyph || '◈'}</span>
-        <span class="proj-preview-label">${p.tags ? p.tags[0] : ''}</span>
+        <span class="proj-preview-label">${(p.tags && p.tags[0]) || ''}</span>
       </div>
       <h3>${p.title || ''}</h3>
       <p>${p.desc || ''}</p>
@@ -446,56 +271,55 @@ function renderProjects(projects, containerId) {
 }
 
 
-/* ====== MAIN ====== */
-/* ============================================================
-   main.js — punto de entrada
-   Llama a las demás funciones en orden.
-   ============================================================ */
+/* ====== 7. SIDEBAR: toggle responsive + scroll-spy ====== */
 
+function setupSidebar() {
+  const sidebar = document.querySelector('.ide-sidebar');
+  const toggle  = document.getElementById('sideToggle');
+  if (!sidebar) return;
+
+  // toggle responsive (móvil)
+  toggle?.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+
+  // scroll-spy: marca el archivo activo según la sección visible
+  const links = sidebar.querySelectorAll('.side-files a[data-spy]');
+  const sections = [...links]
+    .map(a => document.getElementById(a.dataset.spy))
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        links.forEach(l => l.classList.toggle('active', l.dataset.spy === id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => spy.observe(s));
+}
+
+
+/* ====== 8. MAIN ====== */
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Red neuronal del HERO (densa, viva)
-  const heroCanvas = document.getElementById('netCanvas');
-  if (heroCanvas) {
-    makeNeuralNet(heroCanvas, {
-      density:   0.00018,
-      maxLink:   0.16,
-      speed:     0.85,
-      damping:   0.998,
-      wander:    0.020,
-      pulseRate: 0.18,
-      fixed:     false
-    });
-  }
-
-  // 2. Red neuronal de FONDO global (sutil, todo el viewport)
-  const ambientCanvas = document.getElementById('ambientNet');
-  if (ambientCanvas) {
-    makeNeuralNet(ambientCanvas, {
-      density:   0.00005,
-      maxLink:   0.20,
-      speed:     0.45,
-      damping:   0.997,
-      wander:    0.012,
-      pulseRate: 0.05,
-      fixed:     true,
-      nodeColor: 'rgba(217,213,229,0.85)',
-      colorA:    'rgba(160,128,220,OP)',
-      colorB:    'rgba(120,180,205,OP)'
-    });
-  }
-
-  // 3. Proyectos dinámicos (antes de reveal para que el observer los pille)
+  // 1. Proyectos dinámicos (antes que reveal para que el observer los pille)
   if (typeof DEV_PROJECTS !== 'undefined') {
     renderProjects(DEV_PROJECTS, 'projects-grid');
   }
 
-  // 4. Animaciones de aparición y métricas
+  // 2. Animaciones y micro-interacciones
   setupReveal();
   setupCounters();
   setupSparklines();
 
-  // 5. Widget de IA
+  // 3. Navegación del sidebar
+  setupSidebar();
+
+  // 4. Asistente IA
   setupAiAssistant();
 });
-
