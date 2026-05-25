@@ -1,166 +1,175 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>César España — Full-Stack Developer · Java Spring Boot</title>
-<meta name="description" content="Portafolio de César Libardo España Salguero — desarrollador full-stack Java Spring Boot, Angular, Node.js, .NET. Apps en producción y APIs documentadas." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>César España — Full-Stack Developer · Java Spring Boot</title>
+  <meta name="description"
+    content="Portafolio de César Libardo España Salguero — desarrollador full-stack Java Spring Boot, Angular, Node.js, .NET. Apps en producción y APIs documentadas." />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1117'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' fill='%2379c0ff' text-anchor='middle'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1117'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' fill='%2379c0ff' text-anchor='middle'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="dev.css" />
+  <link rel="stylesheet" href="dev.css" />
 </head>
 
 <body data-screen-label="Dev" class="view-dev">
 
 
-<!-- ════════════════════════════════════════════════════════════
+  <!-- ════════════════════════════════════════════════════════════
      IDE SHELL — chrome estilo VS Code
      ════════════════════════════════════════════════════════════ -->
-<div class="ide">
+  <div class="ide">
 
-  <!-- ── Title bar ────────────────────────────────────────── -->
-  <header class="ide-titlebar">
-    <div class="lights">
-      <span class="light red"></span>
-      <span class="light yellow"></span>
-      <span class="light green"></span>
-    </div>
-
-    <div class="path">
-      <span class="muted">~</span>
-      <span class="sep">/</span>
-      <span class="muted">cesar-espana</span>
-      <span class="sep">/</span>
-      <span class="muted">portfolio</span>
-      <span class="sep">/</span>
-      <span>dev.tsx</span>
-    </div>
-
-    <div class="title-tools">
-      <span class="branch">
-        <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm-2.25.75a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6A1 1 0 0 0 5 9.5v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.492 2.492 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM3.5 3.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z"/></svg>
-        main
-      </span>
-      <a class="switch" href="../Analyst/analyst.html" title="Cambiar a perspectiva Data">
-        <span class="muted">switch:</span>
-        <span>analyst</span>
-        <span class="arrow">↗</span>
-      </a>
-    </div>
-  </header>
-
-
-  <!-- ── Tab bar ──────────────────────────────────────────── -->
-  <nav class="ide-tabs">
-    <span class="tab active">
-      <span class="dot file"></span>
-      dev.tsx
-      <span class="x">×</span>
-    </span>
-    <a class="tab" href="../Analyst/analyst.html">
-      <span class="dot file"></span>
-      analyst.py
-    </a>
-    <a class="tab" href="../index.html">
-      <span class="dot file"></span>
-      README.md
-    </a>
-    <span class="tab-spacer"></span>
-    <a class="tab-action" href="../Documentos/Cesar-Espana-CV.pdf" download title="Descargar CV">
-      <span class="muted">download</span>
-      <span>CV.pdf</span>
-      <span class="arrow">↓</span>
-    </a>
-  </nav>
-
-
-  <!-- ── Body: sidebar + content ─────────────────────────── -->
-  <div class="ide-body">
-
-    <!-- ── Sidebar / file explorer ──────────────────────── -->
-    <aside class="ide-sidebar">
-      <button class="side-toggle" id="sideToggle" aria-label="Mostrar/ocultar explorador">
-        <span class="ic">≡</span>
-        <span class="lbl">EXPLORER</span>
-      </button>
-
-      <div class="side-section">
-        <div class="side-h">▾ PORTFOLIO</div>
-        <ul class="side-files">
-          <li><a href="#hero"      data-spy="hero"><span class="ic">⌂</span>00_intro.md</a></li>
-          <li><a href="#roles"     data-spy="roles"><span class="ic">{·}</span>01_roles.ts</a></li>
-          <li><a href="#metrics"   data-spy="metrics"><span class="ic">∑</span>02_metrics.json</a></li>
-          <li><a href="#about"     data-spy="about"><span class="ic">¶</span>03_about.md</a></li>
-          <li><a href="#stack"     data-spy="stack"><span class="ic">⌘</span>04_stack.txt</a></li>
-          <li><a href="#experience" data-spy="experience"><span class="ic">$</span>05_experience.log</a></li>
-          <li><a href="#projects"  data-spy="projects"><span class="ic">◆</span>06_projects.git</a></li>
-          <li><a href="#education" data-spy="education"><span class="ic">★</span>07_education.md</a></li>
-          <li><a href="#contact"   data-spy="contact"><span class="ic">✉</span>08_contact.env</a></li>
-        </ul>
+    <!-- ── Title bar ────────────────────────────────────────── -->
+    <header class="ide-titlebar">
+      <div class="lights">
+        <span class="light red"></span>
+        <span class="light yellow"></span>
+        <span class="light green"></span>
       </div>
 
-      <div class="side-section">
-        <div class="side-h">▾ STATUS</div>
-        <div class="side-status">
-          <span class="dot online"></span>
-          <div>
-            <div class="ss-line">available for work</div>
-            <div class="ss-sub mono">Florencia · Caquetá, CO</div>
+      <div class="path">
+        <span class="muted">~</span>
+        <span class="sep">/</span>
+        <span class="muted">cesar-espana</span>
+        <span class="sep">/</span>
+        <span class="muted">portfolio</span>
+        <span class="sep">/</span>
+        <span>dev.tsx</span>
+      </div>
+
+      <div class="title-tools">
+        <span class="branch">
+          <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true">
+            <path
+              d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm-2.25.75a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6A1 1 0 0 0 5 9.5v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.492 2.492 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM3.5 3.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z" />
+          </svg>
+          main
+        </span>
+        <a class="switch" href="../Analyst/analyst.html" title="Cambiar a perspectiva Data">
+          <span class="muted">switch:</span>
+          <span>analyst</span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+    </header>
+
+
+    <!-- ── Tab bar ──────────────────────────────────────────── -->
+    <nav class="ide-tabs">
+      <span class="tab active">
+        <span class="dot file"></span>
+        developer.tsx
+        <span class="x">×</span>
+      </span>
+      <a class="tab" href="../Analyst/analyst.html">
+        <span class="dot file"></span>
+        analyst.py
+      </a>
+      <a class="tab" href="../index.html">
+        <span class="dot file"></span>
+        README.md
+      </a>
+      <span class="tab-spacer"></span>
+      <a class="tab-action" href="../Documentos/Cesar-Espana-CV.pdf" download title="Descargar CV">
+        <span class="muted">download</span>
+        <span>CV.pdf</span>
+        <span class="arrow">↓</span>
+      </a>
+    </nav>
+
+
+    <!-- ── Body: sidebar + content ─────────────────────────── -->
+    <div class="ide-body">
+
+      <!-- ── Sidebar / file explorer ──────────────────────── -->
+      <aside class="ide-sidebar">
+        <button class="side-toggle" id="sideToggle" aria-label="Mostrar/ocultar explorador">
+          <span class="ic">≡</span>
+          <span class="lbl">EXPLORER</span>
+        </button>
+
+        <div class="side-section">
+          <div class="side-h">▾ PORTFOLIO</div>
+          <ul class="side-files">
+            <li><a href="#hero" data-spy="hero"><span class="ic">⌂</span>00_intro.md</a></li>
+            <li><a href="#roles" data-spy="roles"><span class="ic">{·}</span>01_roles.ts</a></li>
+            <li><a href="#metrics" data-spy="metrics"><span class="ic">∑</span>02_metrics.json</a></li>
+            <li><a href="#about" data-spy="about"><span class="ic">¶</span>03_about.md</a></li>
+            <li><a href="#stack" data-spy="stack"><span class="ic">⌘</span>04_stack.txt</a></li>
+            <li><a href="#experience" data-spy="experience"><span class="ic">$</span>05_experience.log</a></li>
+            <li><a href="#projects" data-spy="projects"><span class="ic">◆</span>06_projects.git</a></li>
+            <li><a href="#education" data-spy="education"><span class="ic">★</span>07_education.md</a></li>
+            <li><a href="#contact" data-spy="contact"><span class="ic">✉</span>08_contact.env</a></li>
+          </ul>
+        </div>
+
+        <div class="side-section">
+          <div class="side-h">▾ STATUS</div>
+          <div class="side-status">
+            <span class="dot online"></span>
+            <div>
+              <div class="ss-line">available for work</div>
+              <div class="ss-sub mono">Florencia · Caquetá, CO</div>
+            </div>
           </div>
         </div>
-      </div>
-    </aside>
+      </aside>
 
 
-    <!-- ── Main content (scrolla) ───────────────────────── -->
-    <main class="ide-content">
+      <!-- ── Main content (scrolla) ───────────────────────── -->
+      <main class="ide-content">
 
 
-      <!-- ══════════ HERO ══════════ -->
-      <section class="hero" id="hero">
+        <!-- ══════════ HERO ══════════ -->
+        <section class="hero" id="hero">
 
-        <div class="hero-grid">
+          <div class="hero-grid">
 
-          <!-- Foto + tarjeta perfil -->
-          <div class="hero-profile">
-            <div class="portrait-frame">
-              <div class="portrait">
-                <img src="../Documentos/cesar.jpg" alt="César Libardo España Salguero" />
+            <!-- Foto + tarjeta perfil -->
+            <div class="hero-profile">
+              <div class="portrait-frame">
+                <div class="portrait">
+                  <img src="../Documentos/cesar.jpg" alt="César Libardo España Salguero" />
+                </div>
+                <div class="portrait-meta mono">
+                  <span class="dot online"></span>
+                  online · v2026
+                </div>
               </div>
-              <div class="portrait-meta mono">
-                <span class="dot online"></span>
-                online · v2026
-              </div>
+
+              <ul class="hero-meta">
+                <li><span class="k">name</span><span class="v">"César Libardo España"</span></li>
+                <li><span class="k">role</span><span class="v">"Full-Stack Developer"</span></li>
+                <li><span class="k">based</span><span class="v">"Florencia, Caquetá · CO"</span></li>
+                <li><span class="k">langs</span><span class="v">["ES nativo", "EN B1"]</span></li>
+                <li><span class="k">email</span><span class="v"><a
+                      href="mailto:cesarespana.dev@gmail.com">"cesarespana.dev@gmail.com"</a></span></li>
+              </ul>
             </div>
 
-            <ul class="hero-meta">
-              <li><span class="k">name</span><span class="v">"César Libardo España"</span></li>
-              <li><span class="k">role</span><span class="v">"Full-Stack Developer"</span></li>
-              <li><span class="k">based</span><span class="v">"Florencia, Caquetá · CO"</span></li>
-              <li><span class="k">langs</span><span class="v">["ES nativo", "EN B1"]</span></li>
-              <li><span class="k">email</span><span class="v"><a href="mailto:cesarespana.dev@gmail.com">"cesarespana.dev@gmail.com"</a></span></li>
-            </ul>
-          </div>
-
-          <!-- Code editor: hero -->
-          <div class="codeblock">
-            <header class="cb-head">
-              <span class="cb-file">~/cesar/hello.java</span>
-              <span class="cb-actions mono">
-                <span class="cb-act">format</span>
-                <span class="cb-act">run ▶</span>
-              </span>
-            </header>
-            <pre class="cb-body" aria-hidden="false"><code><span class="ln"> 1</span><span class="k">public class</span> <span class="cls">CesarEspana</span> <span class="k">extends</span> <span class="cls">Developer</span> {</code>
+            <!-- Code editor: hero -->
+            <div class="codeblock">
+              <header class="cb-head">
+                <span class="cb-file">~/cesar/hello.java</span>
+                <span class="cb-actions mono">
+                  <span class="cb-act">format</span>
+                  <span class="cb-act">run ▶</span>
+                </span>
+              </header>
+              <pre class="cb-body" aria-hidden="false"><code><span class="ln"> 1</span><span class="k">public class</span> <span class="cls">CesarEspana</span> <span class="k">extends</span> <span class="cls">Developer</span> {</code>
 <code><span class="ln"> 2</span>  <span class="k">private final</span> <span class="t">String</span>   role  = <span class="s">"Full-Stack"</span>;</code>
 <code><span class="ln"> 3</span>  <span class="k">private final</span> <span class="t">String[]</span> stack = {</code>
 <code><span class="ln"> 4</span>    <span class="s">"Java"</span>, <span class="s">"Spring Boot"</span>, <span class="s">"Angular"</span>,</code>
-<code><span class="ln"> 5</span>    <span class="s">"Node.js"</span>, <span class="s">".NET"</span>, <span class="s">"MySQL"</span></code>
+<code><span class="ln"> 5</span>    <span class="s">"Node.js"</span>, <span class="s">".NET"</span>, <span class="s">"MySQL"</span>, <span class="s">"Git"</span></code>
 <code><span class="ln"> 6</span>  };</code>
 <code><span class="ln"> 7</span>  <span class="k">private final</span> <span class="t">int</span>      shipped = <span class="n">5</span>;</code>
 <code><span class="ln"> 8</span></code>
@@ -170,522 +179,567 @@
 <code><span class="ln">12</span>  }</code>
 <code><span class="ln">13</span>}<span class="caret">▌</span></code></pre>
 
-            <footer class="cb-foot mono">
-              <span><span class="ok">✓</span> compiled in 0.4s</span>
-              <span class="muted">·</span>
-              <span>5 clients · -40% report time · 3 stacks shipped</span>
-            </footer>
+              <footer class="cb-foot mono">
+                <span><span class="ok">✓</span> compiled in 0.4s</span>
+                <span class="muted">·</span>
+                <span>5 clients · -40% report time · 3 stacks shipped</span>
+              </footer>
+            </div>
           </div>
-        </div>
 
-        <!-- CTA row -->
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="../Documentos/Cesar-Espana-CV.pdf" download>
-            <span class="mono">$</span> download CV.pdf
-          </a>
-          <a class="btn" href="#projects">
-            <span class="mono">cd</span> ./projects <span class="arrow">→</span>
-          </a>
-          <a class="btn" href="https://github.com/" target="_blank" rel="noopener">
-            GitHub <span class="arrow">↗</span>
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/cesar-libardo-espana-salguero-analista-de-datos-developer/" target="_blank" rel="noopener">
-            LinkedIn <span class="arrow">↗</span>
-          </a>
-        </div>
-      </section>
+          <!-- CTA row -->
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="../Documentos/Cesar-Espana-CV.pdf" download>
+              <span class="mono">$</span> Download CV.pdf
+            </a>
+            <a class="btn" href="#projects">
+              <span class="mono">cd</span> ./projects <span class="arrow">→</span>
+            </a>
+            <a class="btn" href="https://github.com/CesarEspa/" target="_blank" rel="noopener">
+              GitHub <span class="arrow">↗</span>
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/cesar-libardo-espana-salguero-analista-de-datos-developer/"
+              target="_blank" rel="noopener">
+              LinkedIn <span class="arrow">↗</span>
+            </a>
+          </div>
+        </section>
 
 
-      <!-- ══════════ ROLES ══════════ -->
-      <section id="roles">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
- * <span class="c-strong">01_roles.ts</span>  ──  Dos disciplinas, un developer
- * <span class="c-strong">primary</span>:  Full-Stack · Java Spring Boot
- * <span class="c-strong">also</span>:     Data Analyst &amp; Data Science (Roma · IA)
+        <!-- ══════════ ROLES ══════════ -->
+        <section id="roles">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
+ * <span class="c-strong">01_roles.ts</span>  ──  Cómo construyo
+ * <span class="c-strong">backend</span>:   Java Spring Boot · Node.js · .NET · APIs REST
+ * <span class="c-strong">frontend</span>:  Angular · interfaces que se usan
  */</span></pre>
-        </div>
+          </div>
 
-        <div class="roles">
+          <div class="roles">
 
-          <article class="role dev reveal">
-            <div class="role-head">
-              <span class="role-num mono">/01</span>
-              <span class="role-tag mono">@FullStackDeveloper</span>
-            </div>
-            <h3>Construyo <span class="serif">producto que funciona.</span></h3>
-            <p>Diseño e implemento aplicaciones web completas — del schema MySQL a la UI —
-              con APIs sólidas en Java Spring Boot, Angular, Node.js y .NET. Trabajo cada proyecto
-              desde la recolección de requisitos hasta el despliegue, con iteraciones cortas
-              y entregables medibles.</p>
-            <ul class="role-stack">
-              <li class="key">Java</li>
-              <li class="key">Spring Boot</li>
-              <li class="key">Angular</li>
-              <li class="key">MySQL</li>
-              <li class="key">REST APIs</li>
-              <li>Node.js</li>
-              <li>.NET</li>
-              <li>JavaScript</li>
-              <li>HTML / CSS</li>
-              <li>Git / GitHub</li>
-            </ul>
-            <div class="role-foot">
-              <span class="role-stat mono"><b>+5</b> clientes en producción</span>
-              <a href="#projects" class="role-link">Casos de software →</a>
-            </div>
-          </article>
+            <article class="role dev reveal">
+              <div class="role-head">
+                <span class="role-num mono">/01</span>
+                <span class="role-tag mono">@Backend.&.APIs</span>
+              </div>
+              <h3>Construyo <span class="serif">el motor que funciona.</span></h3>
+              <p>Diseño e implemento el backend completo — del schema MySQL a las APIs REST —
+                con Java Spring Boot, Node.js y .NET. Estructuro bases de datos sin redundancias
+                y expongo endpoints documentados que escalan.</p>
+              <ul class="role-stack">
+                <li class="key">Java</li>
+                <li class="key">Spring Boot</li>
+                <li class="key">MySQL</li>
+                <li class="key">REST APIs</li>
+                <li>Node.js</li>
+                <li>.NET</li>
+                <li>JPA / Hibernate</li>
+                <li>Swagger</li>
+              </ul>
+              <div class="role-foot">
+                <span class="role-stat mono"><b>+5</b> clientes en producción</span>
+                <a href="#projects" class="role-link">Casos de software →</a>
+              </div>
+            </article>
 
-          <article class="role data reveal">
-            <div class="role-head">
-              <span class="role-num mono">/02</span>
-              <span class="role-tag mono">@DataAnalyst.also</span>
-            </div>
-            <h3>Y también <span class="serif">analista de datos.</span></h3>
-            <p>Mi otro perfil: limpio datasets, entreno modelos y construyo dashboards en Power BI.
-              Maestría oficial en IA en curso (Roma) y bootcamps de Data Science certificados.</p>
-            <ul class="role-stack">
-              <li>Python</li><li>Pandas</li><li>SQL</li><li>Power BI</li>
-              <li>scikit-learn</li><li>Excel avanzado</li>
-            </ul>
-            <div class="role-foot">
-              <span class="role-stat mono"><b>−40%</b> tiempo de reportes</span>
-              <a href="../Analyst/analyst.html" class="role-link">Ver portafolio data →</a>
-            </div>
-          </article>
+            <article class="role dev reveal">
+              <div class="role-head">
+                <span class="role-num mono">/02</span>
+                <span class="role-tag mono">@FrontEnd.&.Delivery</span>
+              </div>
+              <h3>Y entrego <span class="serif">producto de punta a punta.</span></h3>
+              <p>No solo el backend: integro el frontend en Angular, despliego, documento
+                y acompaño cada proyecto desde la recolección de requisitos hasta producción.
+                El cliente recibe algo que funciona, no un repo a medias.</p>
+              <ul class="role-stack">
+                <li class="key">Angular</li>
+                <li class="key">TypeScript</li>
+                <li class="key">JavaScript</li>
+                <li>HTML / CSS</li>
+                <li>Git / GitHub</li>
+                <li>Despliegue</li>
+              </ul>
+              <div class="role-foot">
+                <span class="role-stat mono"><b>−40%</b> carga operativa manual</span>
+                <a href="#projects" class="role-link">Ver proyectos →</a>
+              </div>
+            </article>
 
-        </div>
-      </section>
+          </div>
+
+          <p class="role-edge mono"
+            style="margin-top:24px;max-width:64ch;color:var(--muted);font-size:.9rem;line-height:1.65;border-top:1px solid var(--line);padding-top:18px">
+            <span class="c">// </span><span style="color:var(--text)">Mi formación en datos e IA me hace diseñar
+              pensando en cómo se va a explotar la información,</span> no solo en moverla entre capas.
+          </p>
+        </section>
 
 
-      <!-- ══════════ METRICS ══════════ -->
-      <section id="metrics">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
+        <!-- ══════════ METRICS ══════════ -->
+        <section id="metrics">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
  * <span class="c-strong">02_metrics.json</span>  ──  Highlights del último año
  */</span></pre>
-        </div>
+          </div>
 
-        <div class="metrics">
+          <div class="metrics">
 
-          <article class="metric reveal">
-            <header class="m-head mono">
-              <span class="m-key">apps_in_production</span>
-              <span class="m-type">int</span>
-            </header>
-            <div class="num"><span class="sign">+</span><span data-count="5">0</span><span class="unit mono">clientes</span></div>
-            <p class="desc">Aplicaciones web full-stack (Java Spring Boot, Node.js, .NET + MySQL) deployadas para empresas reales del sector servicios — inventarios, reservas y facturación.</p>
-            <p class="ctx mono">// freelance · 2024–25</p>
-            <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
-              <path class="bg" d="M0 28 L240 28"/>
-              <path class="fg" d="M0 28 C 30 20, 50 22, 80 18 S 140 8, 240 6"/>
-            </svg>
-          </article>
+            <article class="metric reveal">
+              <header class="m-head mono">
+                <span class="m-key">apps_in_production</span>
+                <span class="m-type">int</span>
+              </header>
+              <div class="num"><span class="sign">+</span><span data-count="5">0</span><span
+                  class="unit mono">clientes</span></div>
+              <p class="desc">Aplicaciones web full-stack (Java Spring Boot, Node.js, .NET + MySQL) deployadas para
+                empresas reales del sector servicios — inventarios, reservas y facturación.</p>
+              <p class="ctx mono">// freelance · 2024–25</p>
+              <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
+                <path class="bg" d="M0 28 L240 28" />
+                <path class="fg" d="M0 28 C 30 20, 50 22, 80 18 S 140 8, 240 6" />
+              </svg>
+            </article>
 
-          <article class="metric cyan reveal">
-            <header class="m-head mono">
-              <span class="m-key">backend_stacks</span>
-              <span class="m-type">int</span>
-            </header>
-            <div class="num"><span data-count="3">0</span><span class="unit mono">stacks</span></div>
-            <p class="desc">Java Spring Boot, Node.js y .NET — tres ecosistemas backend usados en proyectos reales, integrados con MySQL y APIs REST documentadas.</p>
-            <p class="ctx mono">// proyectos freelance · 2024–25</p>
-            <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
-              <path class="bg" d="M0 28 L240 28"/>
-              <path class="fg" d="M0 30 L 80 22 L 160 14 L 240 8"/>
-            </svg>
-          </article>
+            <article class="metric cyan reveal">
+              <header class="m-head mono">
+                <span class="m-key">backend_stacks</span>
+                <span class="m-type">int</span>
+              </header>
+              <div class="num"><span data-count="3">0</span><span class="unit mono">stacks</span></div>
+              <p class="desc">Java Spring Boot, Node.js y .NET — tres ecosistemas backend usados en proyectos reales,
+                integrados con MySQL y APIs REST documentadas.</p>
+              <p class="ctx mono">// proyectos freelance · 2024–25</p>
+              <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
+                <path class="bg" d="M0 28 L240 28" />
+                <path class="fg" d="M0 30 L 80 22 L 160 14 L 240 8" />
+              </svg>
+            </article>
 
-          <article class="metric amber reveal">
-            <header class="m-head mono">
-              <span class="m-key">programs_in_progress</span>
-              <span class="m-type">int</span>
-            </header>
-            <div class="num"><span data-count="3">0</span><span class="unit mono">activos</span></div>
-            <p class="desc">Bootcamp Full-Stack Java (Generations Colombia), Maestría IA (Roma) y Máster Data Science (Dev Senior Code) — aprendiendo mientras construyo en producción.</p>
-            <p class="ctx mono">// Generations · Roma · Dev Senior</p>
-            <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
-              <path class="bg" d="M0 28 L240 28"/>
-              <path class="fg" d="M0 28 L 60 22 L 90 22 L 150 14 L 180 14 L 240 6"/>
-            </svg>
-          </article>
+            <article class="metric amber reveal">
+              <header class="m-head mono">
+                <span class="m-key">programs_in_progress</span>
+                <span class="m-type">int</span>
+              </header>
+              <div class="num"><span data-count="3">0</span><span class="unit mono">activos</span></div>
+              <p class="desc">Bootcamp Full-Stack Java (Generations Colombia), Maestría IA (Roma) y Máster Data Science
+                (Dev Senior Code) — aprendiendo mientras construyo en producción.</p>
+              <p class="ctx mono">// Generations · Roma · Dev Senior</p>
+              <svg class="spark" viewBox="0 0 240 36" preserveAspectRatio="none">
+                <path class="bg" d="M0 28 L240 28" />
+                <path class="fg" d="M0 28 L 60 22 L 90 22 L 150 14 L 180 14 L 240 6" />
+              </svg>
+            </article>
 
-        </div>
-      </section>
+          </div>
+        </section>
 
 
-      <!-- ══════════ ABOUT ══════════ -->
-      <section id="about">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
+        <!-- ══════════ ABOUT ══════════ -->
+        <section id="about">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
  * <span class="c-strong">03_about.md</span>  ──  De la selva amazónica a APIs en producción
  */</span></pre>
-        </div>
-
-        <div class="about-grid">
-          <div>
-            <p>Me formé como Ingeniero en Sistemas en la Universidad de la Amazonia y desde 2024
-              construyo aplicaciones web completas para clientes reales. Trabajo con
-              <b>Java Spring Boot, Node.js y .NET</b> en el backend; MySQL y SQL Server en la capa
-              de datos; y Angular o interfaces web en el frontend.</p>
-            <p>Lo que me mueve: escribir código que funcione en producción, no solo en local.
-              Diseño APIs que escalan, estructuro bases de datos sin redundancias y construyo
-              interfaces que tienen sentido para quien las usa — no solo para quien las construye.</p>
-            <p>Cuando no estoy codificando, estoy aprendiendo — un bootcamp Full-Stack Java,
-              una maestría en IA y un máster en Data Science, todos a la vez. Creo que el mejor
-              desarrollador hoy combina ingeniería sólida, comprensión de datos y criterio de
-              producto.</p>
           </div>
 
-          <aside class="now-card">
-            <h3 class="mono"># ahora_mismo.txt</h3>
-            <div class="now-list">
-              <div class="row"><span class="bullet">▸</span><span class="what">Full-Stack Java <span class="muted">— Generations CO</span></span><span class="when mono">Mar–Jun 26</span></div>
-              <div class="row"><span class="bullet">▸</span><span class="what">Maestría oficial IA <span class="muted">— Roma</span></span><span class="when mono">2025 →</span></div>
-              <div class="row"><span class="bullet">▸</span><span class="what">Máster IA &amp; Data Science <span class="muted">— Dev Senior Code</span></span><span class="when mono">2025 →</span></div>
-              <div class="row"><span class="bullet">▸</span><span class="what">Freelance: apps web &amp; backends</span><span class="when mono">activo</span></div>
-              <div class="row"><span class="bullet">▸</span><span class="what">Buscando primer rol jr. como dev</span><span class="when mono">2026</span></div>
+          <div class="about-grid">
+            <div>
+              <p>Me formé como Ingeniero en Sistemas en la Universidad de la Amazonia y desde 2024
+                construyo aplicaciones web completas para clientes reales:
+                <b>Java Spring Boot, Node.js y .NET</b> en el backend; MySQL y SQL Server en la
+                capa de datos; y Angular en el frontend.
+              </p>
+              <p>Lo que me mueve es escribir código que funcione en producción, no solo en local:
+                APIs que escalan, bases de datos sin redundancias e interfaces que tienen sentido
+                para quien las usa. Sigo aprendiendo en paralelo — bootcamp Full-Stack Java y
+                especializaciones en IA y datos — porque creo que el mejor desarrollador combina
+                ingeniería sólida, comprensión de datos y criterio de producto.</p>
             </div>
-          </aside>
-        </div>
-      </section>
+            
+            <aside class="now-card">
+              <h3 class="mono"># ahora_mismo.txt</h3>
+              <div class="now-list">
+                <div class="row"><span class="bullet">▸</span><span class="what">Full-Stack Java <span class="muted">—
+                      Generations CO</span></span><span class="when mono">Mar–Jun 26</span></div>
+                <div class="row"><span class="bullet">▸</span><span class="what">Maestría oficial IA <span
+                      class="muted">— Roma</span></span><span class="when mono">2025 →</span></div>
+                <div class="row"><span class="bullet">▸</span><span class="what">Máster IA &amp; Data Science <span
+                      class="muted">— Dev Senior Code</span></span><span class="when mono">2025 →</span></div>
+                <div class="row"><span class="bullet">▸</span><span class="what">Freelance: apps web &amp;
+                    backends</span><span class="when mono">activo</span></div>
+                <div class="row"><span class="bullet">▸</span><span class="what">Buscando primer rol jr. como
+                    dev</span><span class="when mono">2026</span></div>
+              </div>
+            </aside>
+          </div>
+        </section>
 
 
-      <!-- ══════════ STACK ══════════ -->
-      <section id="stack">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
+        <!-- ══════════ STACK ══════════ -->
+        <section id="stack">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
  * <span class="c-strong">04_stack.txt</span>  ──  Herramientas con las que construyo
  */</span></pre>
-        </div>
-
-        <div class="stack-grid">
-
-          <div class="stack-card reveal">
-            <header class="sc-head mono">
-              <span class="sc-prompt">$</span>
-              <span class="sc-cmd">mvn dependency:tree</span>
-              <span class="sc-tag">backend</span>
-            </header>
-            <ul class="sc-body">
-              <li><span class="b">├─</span>Java</li>
-              <li><span class="b">├─</span>Spring Boot</li>
-              <li><span class="b">├─</span>Node.js</li>
-              <li><span class="b">├─</span>.NET</li>
-              <li><span class="b">├─</span>REST APIs</li>
-              <li><span class="b">├─</span>Swagger</li>
-              <li><span class="b">└─</span>Maven</li>
-            </ul>
           </div>
 
-          <div class="stack-card reveal">
-            <header class="sc-head mono">
-              <span class="sc-prompt">$</span>
-              <span class="sc-cmd">npm list --depth=0</span>
-              <span class="sc-tag">frontend</span>
-            </header>
-            <ul class="sc-body">
-              <li><span class="b">├─</span>Angular</li>
-              <li><span class="b">├─</span>TypeScript</li>
-              <li><span class="b">├─</span>JavaScript</li>
-              <li><span class="b">├─</span>HTML</li>
-              <li><span class="b">├─</span>CSS</li>
-              <li><span class="b">└─</span>Bootstrap</li>
-            </ul>
+          <div class="stack-grid">
+
+            <div class="stack-card reveal">
+              <header class="sc-head mono">
+                <span class="sc-prompt">$</span>
+                <span class="sc-cmd">mvn dependency:tree</span>
+                <span class="sc-tag">backend</span>
+              </header>
+              <ul class="sc-body">
+                <li><span class="b">├─</span>Java</li>
+                <li><span class="b">├─</span>Spring Boot</li>
+                <li><span class="b">├─</span>Node.js</li>
+                <li><span class="b">├─</span>.NET</li>
+                <li><span class="b">├─</span>REST APIs</li>
+                <li><span class="b">├─</span>Swagger</li>
+                <li><span class="b">└─</span>Maven</li>
+              </ul>
+            </div>
+
+            <div class="stack-card reveal">
+              <header class="sc-head mono">
+                <span class="sc-prompt">$</span>
+                <span class="sc-cmd">npm list --depth=0</span>
+                <span class="sc-tag">frontend</span>
+              </header>
+              <ul class="sc-body">
+                <li><span class="b">├─</span>Angular</li>
+                <li><span class="b">├─</span>TypeScript</li>
+                <li><span class="b">├─</span>JavaScript</li>
+                <li><span class="b">├─</span>HTML</li>
+                <li><span class="b">├─</span>CSS</li>
+                <li><span class="b">└─</span>Bootstrap</li>
+              </ul>
+            </div>
+
+            <div class="stack-card reveal">
+              <header class="sc-head mono">
+                <span class="sc-prompt">$</span>
+                <span class="sc-cmd">show databases;</span>
+                <span class="sc-tag">data layer</span>
+              </header>
+              <ul class="sc-body">
+                <li><span class="b">├─</span>MySQL</li>
+                <li><span class="b">├─</span>SQL Server</li>
+                <li><span class="b">├─</span>JPA / Hibernate</li>
+                <li><span class="b">├─</span>Modelado DB</li>
+                <li><span class="b">├─</span>ORM</li>
+                <li><span class="b">└─</span>Transacciones</li>
+              </ul>
+            </div>
+
+            <div class="stack-card reveal">
+              <header class="sc-head mono">
+                <span class="sc-prompt">$</span>
+                <span class="sc-cmd">which tools</span>
+                <span class="sc-tag">tooling</span>
+              </header>
+              <ul class="sc-body">
+                <li><span class="b">├─</span>Git / GitHub</li>
+                <li><span class="b">├─</span>VS Code</li>
+                <li><span class="b">├─</span>IntelliJ IDEA</li>
+                <li><span class="b">├─</span>Postman</li>
+                <li><span class="b">├─</span>Figma</li>
+                <li><span class="b">└─</span>Linux básico</li>
+              </ul>
+            </div>
+
           </div>
-
-          <div class="stack-card reveal">
-            <header class="sc-head mono">
-              <span class="sc-prompt">$</span>
-              <span class="sc-cmd">show databases;</span>
-              <span class="sc-tag">data layer</span>
-            </header>
-            <ul class="sc-body">
-              <li><span class="b">├─</span>MySQL</li>
-              <li><span class="b">├─</span>SQL Server</li>
-              <li><span class="b">├─</span>JPA / Hibernate</li>
-              <li><span class="b">├─</span>Modelado DB</li>
-              <li><span class="b">├─</span>ORM</li>
-              <li><span class="b">└─</span>Transacciones</li>
-            </ul>
-          </div>
-
-          <div class="stack-card reveal">
-            <header class="sc-head mono">
-              <span class="sc-prompt">$</span>
-              <span class="sc-cmd">which tools</span>
-              <span class="sc-tag">tooling</span>
-            </header>
-            <ul class="sc-body">
-              <li><span class="b">├─</span>Git / GitHub</li>
-              <li><span class="b">├─</span>VS Code</li>
-              <li><span class="b">├─</span>IntelliJ IDEA</li>
-              <li><span class="b">├─</span>Postman</li>
-              <li><span class="b">├─</span>Figma</li>
-              <li><span class="b">└─</span>Linux básico</li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
+        </section>
 
 
-      <!-- ══════════ EXPERIENCE ══════════ -->
-      <section id="experience">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
+        <!-- ══════════ EXPERIENCE ══════════ -->
+        <section id="experience">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
  * <span class="c-strong">05_experience.log</span>  ──  Lo que he construido en producción
  */</span></pre>
-        </div>
-
-        <article class="exp reveal">
-          <header class="exp-head mono">
-            <span class="exp-prompt">$</span>
-            <span>git log --author="cesar" --since="2024-03"</span>
-          </header>
-          <div class="head">
-            <div>
-              <h3>Full-Stack Developer · Freelance</h3>
-              <div class="role mono">@ varios clientes — Remoto · Florencia, Colombia</div>
-            </div>
-            <span class="when mono">Mar 2024 — Actual</span>
           </div>
-          <ul>
-            <li><b>Aplicaciones web full-stack</b> con Java Spring Boot, Node.js y .NET integradas con MySQL — automatizando inventarios, reservas y facturación para <span class="hl mono">+5 clientes</span> del sector servicios.</li>
-            <li><b>APIs REST documentadas</b> consumidas por frontends Angular y paneles admin, reduciendo carga operativa manual en clientes activos en más de un <span class="hl mono">40%</span>.</li>
-            <li>Acompañé a cada cliente desde la <b>recolección de requisitos</b> hasta el despliegue, con iteraciones cortas y entregables medibles en cada sprint.</li>
-          </ul>
-        </article>
-      </section>
+
+          <article class="exp reveal">
+            <header class="exp-head mono">
+              <span class="exp-prompt">$</span>
+              <span>git log --author="cesar" --since="2024-03"</span>
+            </header>
+            <div class="head">
+              <div>
+                <h3>Full-Stack Developer · Freelance</h3>
+                <div class="role mono">@ varios clientes — Remoto · Florencia, Colombia</div>
+              </div>
+              <span class="when mono">Mar 2024 — Actual</span>
+            </div>
+            <ul>
+              <li><b>Aplicaciones web full-stack</b> con Java Spring Boot, Node.js y .NET integradas con MySQL —
+                automatizando inventarios, reservas y facturación para <span class="hl mono">+5 clientes</span> del
+                sector servicios.</li>
+              <li><b>APIs REST documentadas</b> consumidas por frontends Angular y paneles admin, reduciendo carga
+                operativa manual en clientes activos en más de un <span class="hl mono">40%</span>.</li>
+              <li>Acompañé a cada cliente desde la <b>recolección de requisitos</b> hasta el despliegue, con iteraciones
+                cortas y entregables medibles en cada sprint.</li>
+            </ul>
+          </article>
+        </section>
 
 
-      <!-- ══════════ PROJECTS ══════════ -->
-      <section id="projects">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
+        <!-- ══════════ PROJECTS ══════════ -->
+        <section id="projects">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
  * <span class="c-strong">06_projects.git</span>  ──  Aplicaciones en producción, APIs que se usan
  */</span></pre>
-        </div>
-
-        <div class="projects">
-
-          <!-- Tarjetas generadas dinámicamente desde projects-data.js -->
-          <div id="projects-grid" style="display:contents"></div>
-
-          <!-- Tarjeta de contacto — siempre al final -->
-          <article class="proj proj-cta reveal">
-            <div class="tags"><span class="tag">// next?</span></div>
-            <h3>Tienes una idea, un proceso manual o un sistema que <span class="serif">necesita modernizarse.</span></h3>
-            <p>Construyo desde cero o mejoro lo que ya tienes — desde APIs REST hasta apps web completas con backend Java o Node.js.</p>
-            <div class="foot">
-              <a class="btn btn-primary" href="mailto:cesarespana.dev@gmail.com"><span class="mono">$</span> contact</a>
-              <span class="mono">response &lt; 24h</span>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-
-      <!-- ══════════ EDUCATION ══════════ -->
-      <section id="education">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
- * <span class="c-strong">07_education.md</span>  ──  Formación continua: IA, datos y software
- */</span></pre>
-        </div>
-
-        <ol class="edu-list">
-          <li class="edu-item">
-            <div>
-              <h4>Maestría Oficial en Inteligencia Artificial</h4>
-              <div class="org">Università G. Marconi · Roma, Italia</div>
-              <span class="badge"><span class="d"></span>en curso</span>
-            </div>
-            <span class="when mono">Oct 2025 — Actual</span>
-          </li>
-          <li class="edu-item">
-            <div>
-              <h4>Máster en IA &amp; Data Science</h4>
-              <div class="org">Dev Senior Code</div>
-              <span class="badge"><span class="d"></span>en curso</span>
-            </div>
-            <span class="when mono">Oct 2025 — Actual</span>
-          </li>
-          <li class="edu-item">
-            <div>
-              <h4>Desarrollador Full-Stack Java</h4>
-              <div class="org">Generations Colombia · bootcamp</div>
-              <span class="badge"><span class="d"></span>iniciando</span>
-            </div>
-            <span class="when mono">Mar — Jun 2026</span>
-          </li>
-          <li class="edu-item">
-            <div>
-              <h4>Ingeniero en Sistemas</h4>
-              <div class="org">Universidad de la Amazonia · Florencia, CO</div>
-            </div>
-            <span class="when mono">Feb 2018 — Ago 2025</span>
-          </li>
-        </ol>
-
-        <h3 class="cert-title mono"># diplomas/  <span class="muted">— click para abrir el PDF</span></h3>
-        <ul class="cert-list">
-          <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero - Programa  devSenior Code-.pdf" tabindex="0">
-            <h4>Full Stack Empresarial con Spring Boot &amp; Angular</h4>
-            <span class="cert-org mono">Dev Senior Code</span>
-            <span class="cert-when mono">Sep 2025</span>
-          </li>
-          <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero -Desarrollo Web Full Stack - Talento Tech.pdf" tabindex="0">
-            <h4>Desarrollo Web Full-Stack — Bootcamp</h4>
-            <span class="cert-org mono">TalentoTech · MinTIC (159 h)</span>
-            <span class="cert-when mono">Dic 2024</span>
-          </li>
-          <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero - Programa -.pdf" tabindex="0">
-            <h4>Oracle Next Education · 6 formaciones</h4>
-            <span class="cert-org mono">Alura · Oracle (343 h)</span>
-            <span class="cert-when mono">Jun 2023</span>
-          </li>
-          <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero - Formacion Mision TIC - Ruta de aprendizaje 2.pdf" tabindex="0">
-            <h4>Misión TIC · Ruta de Aprendizaje 2</h4>
-            <span class="cert-org mono">MinTIC Colombia</span>
-            <span class="cert-when mono">2023</span>
-          </li>
-          <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero - Programacion Desde 0 - Egg.pdf" tabindex="0">
-            <h4>Programación desde 0</h4>
-            <span class="cert-org mono">Egg Cooperation</span>
-            <span class="cert-when mono">2023</span>
-          </li>
-          <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero -Especialista En Fundamentos de IA, Maching Lerning y Ciencia de Datos.pdf" tabindex="0">
-            <h4>Especialista en IA, Machine Learning y Ciencia de Datos</h4>
-            <span class="cert-org mono">Diplomado certificado</span>
-            <span class="cert-when mono">Mar 2026</span>
-          </li>
-          <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero -DS4A  Colombia Fundamentos en Analítica de Datos •  • Correlation One.pdf" tabindex="0">
-            <h4>DS4A Colombia · Fundamentos en Analítica de Datos</h4>
-            <span class="cert-org mono">Correlation One</span>
-            <span class="cert-when mono">2024</span>
-          </li>
-        </ul>
-      </section>
-
-
-      <!-- ══════════ CONTACT ══════════ -->
-      <section id="contact">
-        <div class="sec-head">
-<pre class="sec-comment"><span class="c">/**
- * <span class="c-strong">08_contact.env</span>  ──  ¿Hablamos?
- */</span></pre>
-        </div>
-
-        <div class="contact-grid">
-
-          <div class="contact-hello">
-            <h3>¿Hablamos de <span class="serif">tu próximo proyecto?</span></h3>
-            <p>Disponible para freelance, colaboraciones y mi primer rol full-time como
-              desarrollador backend o full-stack. Respuesta en menos de 24 horas.</p>
-            <a class="btn btn-primary" href="mailto:cesarespana.dev@gmail.com">cesarespana.dev@gmail.com <span class="arrow">→</span></a>
           </div>
 
-          <ul class="contact-list">
-            <li><span class="k mono">$</span> <a href="mailto:cesarespana.dev@gmail.com">send-mail cesarespana.dev@gmail.com</a></li>
-            <li><span class="k mono">$</span> <a href="tel:+573105885140">call +57 310 588 5140</a></li>
-            <li><span class="k mono">$</span> <a href="https://www.linkedin.com/in/cesar-libardo-espana-salguero-analista-de-datos-developer/" target="_blank" rel="noopener">open linkedin.com/in/cesar-libardo ↗</a></li>
-            <li><span class="k mono">$</span> <a href="https://github.com/" target="_blank" rel="noopener">open github.com/cesar ↗</a></li>
-            <li><span class="k mono">$</span> <a href="../Documentos/Cesar-Espana-CV.pdf" download>download CV.pdf ↓</a></li>
+          <div class="projects">
+
+            <!-- Tarjetas generadas dinámicamente desde projects-data.js -->
+            <div id="projects-grid" style="display:contents"></div>
+
+            <!-- Tarjeta de contacto — siempre al final -->
+            <article class="proj proj-cta reveal">
+              <div class="tags"><span class="tag">// next?</span></div>
+              <h3>Tienes una idea, un proceso manual o un sistema que <span class="serif">necesita modernizarse.</span>
+              </h3>
+              <p>Construyo desde cero o mejoro lo que ya tienes — desde APIs REST hasta apps web completas con backend
+                Java o Node.js.</p>
+              <div class="foot">
+                <a class="btn btn-primary" href="mailto:cesarespana.dev@gmail.com"><span class="mono">$</span>
+                  contact</a>
+                <span class="mono">response &lt; 24h</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+
+        <!-- ══════════ EDUCATION ══════════ -->
+        <section id="education">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
+ * <span class="c-strong">07_education.md</span>  ──  Formación continua: IA, datos y software
+ */</span></pre>
+          </div>
+
+          <ol class="edu-list">
+            <li class="edu-item">
+              <div>
+                <h4>Maestría Oficial en Inteligencia Artificial</h4>
+                <div class="org">Università G. Marconi · Roma, Italia</div>
+                <span class="badge"><span class="d"></span>en curso</span>
+              </div>
+              <span class="when mono">Oct 2025 — Actual</span>
+            </li>
+            <li class="edu-item">
+              <div>
+                <h4>Máster en IA &amp; Data Science</h4>
+                <div class="org">Dev Senior Code</div>
+                <span class="badge"><span class="d"></span>en curso</span>
+              </div>
+              <span class="when mono">Oct 2025 — Actual</span>
+            </li>
+            <li class="edu-item">
+              <div>
+                <h4>Desarrollador Full-Stack Java</h4>
+                <div class="org">Generations Colombia · bootcamp</div>
+                <span class="badge"><span class="d"></span>iniciando</span>
+              </div>
+              <span class="when mono">Mar — Jun 2026</span>
+            </li>
+            <li class="edu-item">
+              <div>
+                <h4>Ingeniero en Sistemas</h4>
+                <div class="org">Universidad de la Amazonia · Florencia, CO</div>
+              </div>
+              <span class="when mono">Feb 2018 — Ago 2025</span>
+            </li>
+          </ol>
+
+          <h3 class="cert-title mono"># diplomas/ <span class="muted">— click para abrir el PDF</span></h3>
+          <ul class="cert-list">
+            <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero - Programa  devSenior Code-.pdf"
+              tabindex="0">
+              <h4>Full Stack Empresarial con Spring Boot &amp; Angular</h4>
+              <span class="cert-org mono">Dev Senior Code</span>
+              <span class="cert-when mono">Sep 2025</span>
+            </li>
+            <li class="cert"
+              data-pdf="../Diplomados/Cesar Libardo España Salguero -Desarrollo Web Full Stack - Talento Tech.pdf"
+              tabindex="0">
+              <h4>Desarrollo Web Full-Stack — Bootcamp</h4>
+              <span class="cert-org mono">TalentoTech · MinTIC (159 h)</span>
+              <span class="cert-when mono">Dic 2024</span>
+            </li>
+            <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero - Programa -.pdf" tabindex="0">
+              <h4>Oracle Next Education · 6 formaciones</h4>
+              <span class="cert-org mono">Alura · Oracle (343 h)</span>
+              <span class="cert-when mono">Jun 2023</span>
+            </li>
+            <li class="cert"
+              data-pdf="../Diplomados/Cesar Libardo España Salguero - Formacion Mision TIC - Ruta de aprendizaje 2.pdf"
+              tabindex="0">
+              <h4>Misión TIC · Ruta de Aprendizaje 2</h4>
+              <span class="cert-org mono">MinTIC Colombia</span>
+              <span class="cert-when mono">2023</span>
+            </li>
+            <li class="cert" data-pdf="../Diplomados/Cesar Libardo España Salguero - Programacion Desde 0 - Egg.pdf"
+              tabindex="0">
+              <h4>Programación desde 0</h4>
+              <span class="cert-org mono">Egg Cooperation</span>
+              <span class="cert-when mono">2023</span>
+            </li>
+            <li class="cert"
+              data-pdf="../Diplomados/Cesar Libardo España Salguero -Especialista En Fundamentos de IA, Maching Lerning y Ciencia de Datos.pdf"
+              tabindex="0">
+              <h4>Especialista en IA, Machine Learning y Ciencia de Datos</h4>
+              <span class="cert-org mono">Diplomado certificado</span>
+              <span class="cert-when mono">Mar 2026</span>
+            </li>
+            <li class="cert"
+              data-pdf="../Diplomados/Cesar Libardo España Salguero -DS4A  Colombia Fundamentos en Analítica de Datos •  • Correlation One.pdf"
+              tabindex="0">
+              <h4>DS4A Colombia · Fundamentos en Analítica de Datos</h4>
+              <span class="cert-org mono">Correlation One</span>
+              <span class="cert-when mono">2024</span>
+            </li>
           </ul>
-
-        </div>
-      </section>
+        </section>
 
 
-      <!-- ══════════ FOOTER ══════════ -->
-      <footer class="ide-foot mono">
-        <span>© 2026 — César L. España S.</span>
-        <span class="muted">·</span>
-        <span>built with HTML, CSS, JS &amp; coffee</span>
-        <span class="muted">·</span>
-        <span>v2026.3 · dev view</span>
-      </footer>
+        <!-- ══════════ CONTACT ══════════ -->
+        <section id="contact">
+          <div class="sec-head">
+            <pre class="sec-comment"><span class="c">/**
+ * <span class="c-strong">08_contact.env</span>  ──  ¿Hablamos?
+ */</span></pre>
+          </div>
 
-    </main>
+          <div class="contact-grid">
 
-  </div>
+            <div class="contact-hello">
+              <h3>¿Hablamos de <span class="serif">tu próximo proyecto?</span></h3>
+              <p>Disponible para freelance, colaboraciones y mi primer rol full-time como
+                desarrollador backend o full-stack. Respuesta en menos de 24 horas.</p>
+              <a class="btn btn-primary" href="mailto:cesarespana.dev@gmail.com">cesarespana.dev@gmail.com <span
+                  class="arrow">→</span></a>
+            </div>
 
+            <ul class="contact-list">
+              <li><span class="k mono">$</span> <a href="mailto:cesarespana.dev@gmail.com">send-mail
+                  cesarespana.dev@gmail.com</a></li>
+              <li><span class="k mono">$</span> <a href="tel:+573105885140">call +57 310 588 5140</a></li>
+              <li><span class="k mono">$</span> <a
+                  href="https://www.linkedin.com/in/cesar-libardo-espana-salguero-analista-de-datos-developer/"
+                  target="_blank" rel="noopener">open linkedin.com/in/cesar-libardo ↗</a></li>
+              <li><span class="k mono">$</span> <a href="https://github.com/" target="_blank" rel="noopener">open
+                  github.com/cesar ↗</a></li>
+              <li><span class="k mono">$</span> <a href="../Documentos/Cesar-Espana-CV.pdf" download>download CV.pdf
+                  ↓</a></li>
+            </ul>
 
-  <!-- ── Status bar (fixed bottom) ────────────────────────── -->
-  <footer class="ide-statusbar mono">
-    <span class="sb-item">
-      <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm-2.25.75a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6A1 1 0 0 0 5 9.5v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.492 2.492 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM3.5 3.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z"/></svg>
-      main
-    </span>
-    <span class="sb-sep">·</span>
-    <span class="sb-item ok">✓ build: passing</span>
-    <span class="sb-sep">·</span>
-    <span class="sb-item">5 clients shipped</span>
-    <span class="sb-sep">·</span>
-    <span class="sb-item">−40% report time</span>
-    <span class="sb-spacer"></span>
-    <span class="sb-item muted">UTF-8</span>
-    <span class="sb-sep">·</span>
-    <span class="sb-item muted">LF</span>
-    <span class="sb-sep">·</span>
-    <span class="sb-item">view: <b>dev</b></span>
-  </footer>
-
-</div>
+          </div>
+        </section>
 
 
-<!-- ══════════ WIDGET DE IA ══════════ -->
-<button class="ai-orb" id="aiOrb" aria-label="Pregúntale a la IA del portafolio">
-  <span class="glyph"></span>
-</button>
+        <!-- ══════════ FOOTER ══════════ -->
+        <footer class="ide-foot mono">
+          <span>© 2026 — César L. España S.</span>
+          <span class="muted">·</span>
+          <span>built with HTML, CSS, JS &amp; coffee</span>
+          <span class="muted">·</span>
+          <span>v2026.3 · dev view</span>
+        </footer>
 
-<aside class="ai-panel" id="aiPanel" role="dialog" aria-label="Asistente IA">
-  <header class="ph">
-    <span class="glyph"></span>
-    <div>
-      <div class="ttl">Asistente del portafolio</div>
-      <div class="sub mono">// pregúntame sobre César</div>
+      </main>
+
     </div>
-    <button class="x" id="aiClose" aria-label="Cerrar">×</button>
-  </header>
 
-  <div class="body" id="aiBody">
-    <div class="ai-msg bot">Hola — soy el asistente del portafolio de César. Puedo resumir su experiencia, su stack o ayudarte a redactar un mensaje. ¿Qué quieres saber?</div>
+
+    <!-- ── Status bar (fixed bottom) ────────────────────────── -->
+    <footer class="ide-statusbar mono">
+      <span class="sb-item">
+        <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
+          <path
+            d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm-2.25.75a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6A1 1 0 0 0 5 9.5v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.492 2.492 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM3.5 3.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0Z" />
+        </svg>
+        main
+      </span>
+      <span class="sb-sep">·</span>
+      <span class="sb-item ok">✓ build: passing</span>
+      <span class="sb-sep">·</span>
+      <span class="sb-item">5 clients shipped</span>
+      <span class="sb-sep">·</span>
+      <span class="sb-item">−40% report time</span>
+      <span class="sb-spacer"></span>
+      <span class="sb-item muted">UTF-8</span>
+      <span class="sb-sep">·</span>
+      <span class="sb-item muted">LF</span>
+      <span class="sb-sep">·</span>
+      <span class="sb-item">view: <b>dev</b></span>
+    </footer>
+
   </div>
 
-  <div class="ai-suggestions">
-    <button class="ai-sug">¿Por qué contratarlo?</button>
-    <button class="ai-sug">Resumen en 2 frases</button>
-    <button class="ai-sug">¿Cuál es su stack?</button>
-    <button class="ai-sug">Redacta un email</button>
-  </div>
 
-  <form class="ai-input" id="aiForm">
-    <input id="aiInput" placeholder="Pregunta lo que quieras…" autocomplete="off" />
-    <button type="submit">Enviar</button>
-  </form>
-</aside>
+  <!-- ══════════ WIDGET DE IA ══════════ -->
+  <button class="ai-orb" id="aiOrb" aria-label="Pregúntale a la IA del portafolio">
+    <span class="glyph"></span>
+  </button>
 
-
-<!-- ══════════ MODAL DE DIPLOMAS ══════════ -->
-<div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog">
-  <div class="pdf-modal-bg"></div>
-  <div class="pdf-modal-card">
-    <header class="pdf-modal-head">
-      <span class="pdf-modal-title mono" id="pdfModalTitle">diploma.pdf</span>
-      <div class="pdf-modal-actions">
-        <a class="btn" id="pdfModalDownload" href="#" download>Descargar <span class="arrow">↓</span></a>
-        <button class="pdf-modal-close" id="pdfModalClose" aria-label="Cerrar">×</button>
+  <aside class="ai-panel" id="aiPanel" role="dialog" aria-label="Asistente IA">
+    <header class="ph">
+      <span class="glyph"></span>
+      <div>
+        <div class="ttl">Asistente del portafolio</div>
+        <div class="sub mono">// pregúntame sobre César</div>
       </div>
+      <button class="x" id="aiClose" aria-label="Cerrar">×</button>
     </header>
-    <iframe class="pdf-modal-frame" id="pdfModalFrame" title="Diploma"></iframe>
+
+    <div class="body" id="aiBody">
+      <div class="ai-msg bot">Hola — soy el asistente del portafolio de César. Puedo resumir su experiencia, su stack o
+        ayudarte a redactar un mensaje. ¿Qué quieres saber?</div>
+    </div>
+
+    <div class="ai-suggestions">
+      <button class="ai-sug">¿Por qué contratarlo?</button>
+      <button class="ai-sug">Resumen en 2 frases</button>
+      <button class="ai-sug">¿Cuál es su stack?</button>
+      <button class="ai-sug">Redacta un email</button>
+    </div>
+
+    <form class="ai-input" id="aiForm">
+      <input id="aiInput" placeholder="Pregunta lo que quieras…" autocomplete="off" />
+      <button type="submit">Enviar</button>
+    </form>
+  </aside>
+
+
+  <!-- ══════════ MODAL DE DIPLOMAS ══════════ -->
+  <div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog">
+    <div class="pdf-modal-bg"></div>
+    <div class="pdf-modal-card">
+      <header class="pdf-modal-head">
+        <span class="pdf-modal-title mono" id="pdfModalTitle">diploma.pdf</span>
+        <div class="pdf-modal-actions">
+          <a class="btn" id="pdfModalDownload" href="#" download>Descargar <span class="arrow">↓</span></a>
+          <button class="pdf-modal-close" id="pdfModalClose" aria-label="Cerrar">×</button>
+        </div>
+      </header>
+      <iframe class="pdf-modal-frame" id="pdfModalFrame" title="Diploma"></iframe>
+    </div>
   </div>
-</div>
 
 
-<script src="../projects-data.js"></script>
-<script src="dev.js"></script>
+  <script src="../projects-data.js"></script>
+  <script src="dev.js"></script>
 </body>
+
 </html>
