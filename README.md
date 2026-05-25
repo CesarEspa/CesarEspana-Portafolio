@@ -1,60 +1,92 @@
 # Portafolio · César L. España S.
 
-Landing personal en HTML estático. Listo para publicar en **GitHub Pages**.
+Portafolio personal con **dos perspectivas independientes**: desarrollador Full-Stack y Analista/Científico de Datos. Sin framework, sin build step — HTML, CSS y JS nativos, listo para GitHub Pages.
 
-## Publicar en GitHub Pages (5 minutos)
+## Vistas
 
-1. Crea un repo nuevo en GitHub: `tu-usuario.github.io` (para dominio `https://tu-usuario.github.io`)
-   o cualquier nombre, ej. `portafolio` (será `https://tu-usuario.github.io/portafolio`).
-2. Sube `index.html` y este `README.md` al `main` del repo:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: portafolio v1"
-   git branch -M main
-   git remote add origin git@github.com:TU_USUARIO/TU_REPO.git
-   git push -u origin main
-   ```
-3. En GitHub → **Settings → Pages** → *Source*: `Deploy from a branch` → Branch: `main` / `/ (root)` → **Save**.
-4. Espera ~1 min. Tu sitio estará en `https://TU_USUARIO.github.io/TU_REPO/`.
-
-## Dominio personalizado (opcional)
-
-1. Compra un dominio (ej. `cesarespana.dev`).
-2. En tu DNS añade un `CNAME` apuntando a `TU_USUARIO.github.io`.
-3. En **Settings → Pages → Custom domain**, escribe el dominio y activa **Enforce HTTPS**.
-4. Crea un archivo `CNAME` en la raíz con el dominio dentro:
-   ```
-   cesarespana.dev
-   ```
+| Ruta | Perfil |
+|---|---|
+| `index.html` | Landing de selección de perspectiva |
+| `dev.html` | Portafolio Full-Stack (Java · Spring Boot · Node.js · .NET) |
+| `analyst.html` | Portafolio Data Analyst / Data Science / IA |
 
 ## Estructura
 
 ```
-index.html
-css/
-  tokens.css       ← variables (cambia paleta aquí)
-  base.css         ← reset + tipografía
-  layout.css       ← nav, hero, footer
-  components.css   ← botones, pills, widget IA
-  sections.css    ← cada sección por separado
-js/
-  neural-net.js    ← canvas con neuronas + pulsos
-  reveal.js        ← animaciones al scroll, contadores
-  ai-assistant.js  ← widget "pregúntale al portafolio"
-  main.js          ← punto de entrada
+index.html          ← landing "elige tu perspectiva"
+dev.html            ← portafolio dev full-stack
+analyst.html        ← portafolio data & IA
+style.css           ← estilos landing
+app.js              ← lógica landing (canvas neural, animaciones)
+projects-data.js    ← datos de proyectos (editar aquí para agregar proyectos)
+dev/
+  dev.css           ← estilos vista full-stack
+  dev.js            ← lógica vista full-stack
+analyst/
+  analyst.css       ← estilos vista data & IA
+  analyst.js        ← lógica vista data & IA
 assets/
-  cesar.jpg
-  Cesar-Espana-CV.pdf
+  cesar.jpg                ← foto de perfil
+  Cesar-Espana-CV.pdf      ← CV descargable
+  diplomas/                ← certificados y diplomas PDF
 ```
 
-Sin build step. Tipografías Google: Geist, Geist Mono, Instrument Serif.
+## Agregar un proyecto
+
+Edita `projects-data.js`. Hay dos arrays:
+
+- `DEV_PROJECTS` — aparece en `dev.html`
+- `ANALYST_PROJECTS` — aparece en `analyst.html`
+
+Copia cualquier bloque existente y ajusta los campos:
+
+```js
+{
+  title:  "Nombre del proyecto",
+  desc:   "Descripción breve (1–2 oraciones).",
+  tags:   ["Tech 1", "Tech 2"],
+  glyph:  "{}",          // {} / π / λ / ∑ / ◈ / />  / [ ]
+  demo:   "https://...", // null = sin botón Demo
+  repo:   "https://github.com/CesarEspa/...", // null = sin botón GitHub
+  status: "live",        // "live" | "wip" | "demo" | "private"
+  year:   "2025",
+  client: "nombre cliente" // o null
+}
+```
+
+## Stack de tecnologías
+
+**Dev:** Java · Spring Boot · Angular · Node.js · Express · .NET · MySQL · SQL Server · REST · JWT
+
+**Data:** Python · Pandas · scikit-learn · Power BI · SQL · Excel · EDA · ML supervisado
+
+**Formación:** Maestría en IA (Roma) · DS4A Correlation One · Talento Tech Full-Stack · Oracle / Alura · Misión TIC
+
+## Publicar en GitHub Pages
+
+1. Ve a **Settings → Pages** del repositorio.
+2. *Source*: `Deploy from a branch` → Branch: `main` / `/ (root)` → **Save**.
+3. Tu sitio estará disponible en `https://CesarEspa.github.io/CesarEspana-Portafolio/` en ~1 minuto.
+
+## Dominio personalizado (opcional)
+
+1. En tu DNS añade un `CNAME` apuntando a `CesarEspa.github.io`.
+2. En **Settings → Pages → Custom domain**, escribe el dominio y activa **Enforce HTTPS**.
+3. Crea un archivo `CNAME` en la raíz con solo el dominio:
+   ```
+   cesarespana.dev
+   ```
 
 ## Personalizar
 
-- Edita los enlaces de **GitHub** y **LinkedIn** en el footer (`<a href="https://github.com/...">`).
-- Reemplaza el correo `cesarespana.dev@gmail.com` si cambia.
-- Las métricas (40 %, +5, 3) están en `<span data-count="…">` dentro de `#metrics`.
-- El widget IA usa un proveedor del entorno; en GitHub Pages hace fallback al correo si no hay conexión.
+- **Foto:** reemplaza `assets/cesar.jpg` (mantén el mismo nombre).
+- **CV:** reemplaza `assets/Cesar-Espana-CV.pdf`.
+- **Diplomas:** agrega PDFs en `assets/diplomas/` y referencia en el HTML correspondiente.
+- **Estilos dev:** edita `dev/dev.css`.
+- **Estilos data:** edita `analyst/analyst.css`.
+- **Disponibilidad:** cambia el pill `Disponible` en cada `<header>` de los tres HTMLs.
+- **Redes sociales:** busca `github.com/CesarEspa` y `linkedin.com` en los HTML para actualizar los enlaces del footer.
 
-— Construido con cariño, datos y un poco de IA.
+---
+
+Tipografías: Geist · Geist Mono · Instrument Serif (Google Fonts). Sin dependencias locales.
