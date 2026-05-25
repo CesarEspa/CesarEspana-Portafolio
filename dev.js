@@ -390,6 +390,62 @@ function setupAiAssistant() {
   });
 }
 
+/* ====== RENDER PROJECTS ====== */
+/* ============================================================
+   Genera las tarjetas de proyectos desde projects-data.js.
+   Llama renderProjects(array, containerId) para poblar el grid.
+   ============================================================ */
+
+function renderProjects(projects, containerId) {
+  const grid = document.getElementById(containerId);
+  if (!grid || !Array.isArray(projects)) return;
+
+  const statusMap = {
+    live:    { label: '● en vivo',       cls: 'live' },
+    wip:     { label: '◐ en desarrollo', cls: 'wip'  },
+    demo:    { label: '◈ demo',          cls: 'demo' },
+    private: { label: '⊘ privado',       cls: 'priv' }
+  };
+
+  projects.forEach(p => {
+    const st = statusMap[p.status] || statusMap.demo;
+    const tags = (p.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+    const statusTag = `<span class="tag proj-status ${st.cls}">${st.label}</span>`;
+
+    const demoBtn = p.demo
+      ? `<a class="btn btn-primary" href="${p.demo}" target="_blank" rel="noopener">Ver demo <span class="arrow">↗</span></a>`
+      : '';
+    const repoBtn = p.repo
+      ? `<a class="btn" href="${p.repo}" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>`
+      : '';
+    const linksHtml = (demoBtn || repoBtn)
+      ? `<div class="proj-links">${demoBtn}${repoBtn}</div>`
+      : `<span class="proj-req">solicitar acceso →</span>`;
+
+    const clientSpan = p.client
+      ? `<span>${p.year} · ${p.client}</span>`
+      : `<span>${p.year || ''}</span>`;
+
+    const article = document.createElement('article');
+    article.className = 'proj reveal';
+    article.innerHTML = `
+      <div class="tags">${tags}${statusTag}</div>
+      <div class="proj-preview">
+        <span class="proj-glyph">${p.glyph || '◈'}</span>
+        <span class="proj-preview-label">${p.tags ? p.tags[0] : ''}</span>
+      </div>
+      <h3>${p.title || ''}</h3>
+      <p>${p.desc || ''}</p>
+      <div class="foot">
+        ${clientSpan}
+        ${linksHtml}
+      </div>
+    `;
+    grid.appendChild(article);
+  });
+}
+
+
 /* ====== MAIN ====== */
 /* ============================================================
    main.js — punto de entrada
@@ -429,12 +485,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Animaciones de aparición y métricas
+  // 3. Proyectos dinámicos (antes de reveal para que el observer los pille)
+  if (typeof DEV_PROJECTS !== 'undefined') {
+    renderProjects(DEV_PROJECTS, 'projects-grid');
+  }
+
+  // 4. Animaciones de aparición y métricas
   setupReveal();
   setupCounters();
   setupSparklines();
 
-  // 4. Widget de IA
+  // 5. Widget de IA
   setupAiAssistant();
 });
 

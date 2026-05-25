@@ -1196,3 +1196,79 @@ footer.foot {
   white-space: nowrap;
 }
 
+
+/* ====== DYNAMIC PROJECT CARDS ====== */
+
+/* Preview de proyecto generado por JS */
+.proj-preview {
+  height: 140px;
+  background: var(--bg);
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 4px;
+  transition: border-color .2s;
+}
+.proj:hover .proj-preview { border-color: var(--line-2); }
+
+.proj-glyph {
+  font-family: var(--font-mono);
+  font-size: 40px;
+  color: var(--data);
+  opacity: 0.55;
+  line-height: 1;
+  transition: opacity .2s;
+}
+.proj:hover .proj-glyph { opacity: 0.8; }
+
+.proj-preview-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Badges de estado */
+.proj-status { font-size: 10.5px; }
+.proj-status.live  {
+  color: var(--green);
+  border-color: rgba(158,229,179,0.28);
+  background: rgba(158,229,179,0.07);
+}
+.proj-status.wip   {
+  color: var(--warn);
+  border-color: rgba(255,199,133,0.28);
+  background: rgba(255,199,133,0.07);
+}
+.proj-status.demo  { color: var(--text-2); }
+.proj-status.priv  { color: var(--text-3); }
+
+/* Botones en el footer de la tarjeta */
+.proj-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.proj-links .btn {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+/* Link de "solicitar acceso" cuando no hay demo/repo */
+.proj-req {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+/* Tarjeta CTA — sin min-height estricto */
+.proj-cta { min-height: unset; }
+

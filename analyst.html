@@ -337,69 +337,14 @@
 
     <div class="projects">
 
-      <article class="proj reveal">
-        <div class="tags">
-          <span class="tag">Power BI</span><span class="tag">Python · Pandas</span><span class="tag">EDA</span>
-        </div>
-        <div class="preview">
-          <svg viewBox="0 0 200 100" style="width:90%; height:80%">
-            <rect x="6" y="6" width="188" height="88" rx="4" fill="none" stroke="var(--line)"/>
-            <g fill="var(--data)" opacity="0.85">
-              <rect x="20" y="40" width="9" height="40"/><rect x="48" y="48" width="9" height="32"/>
-              <rect x="76" y="42" width="9" height="38"/><rect x="104" y="36" width="9" height="44"/>
-              <rect x="132" y="20" width="9" height="60"/>
-            </g>
-            <g fill="var(--dev)" opacity="0.7">
-              <rect x="34" y="34" width="9" height="46"/><rect x="62" y="30" width="9" height="50"/>
-              <rect x="90" y="22" width="9" height="58"/><rect x="118" y="28" width="9" height="52"/>
-              <rect x="146" y="14" width="9" height="66"/>
-            </g>
-          </svg>
-        </div>
-        <h3>Análisis ICFES <span class="serif">— Power BI Dashboard</span></h3>
-        <p>Recopilé, limpié y transformé datasets ICFES con Python (pandas), construyendo dashboards para analizar rendimiento por región, institución y área.</p>
-        <div class="foot"><span>2024 · cliente educativo</span><span>caso de estudio →</span></div>
-      </article>
+      <!-- Tarjetas generadas dinámicamente desde projects-data.js -->
+      <div id="projects-grid" style="display:contents"></div>
 
-      <article class="proj reveal">
-        <div class="tags">
-          <span class="tag">Java · Spring Boot</span><span class="tag">MySQL</span><span class="tag">Web</span>
-        </div>
-        <div class="preview">
-          <svg viewBox="0 0 160 100" style="width:90%; height:80%">
-            <rect x="6" y="6" width="148" height="88" rx="4" fill="var(--bg-card-2)" stroke="var(--line)"/>
-            <rect x="14" y="14" width="56" height="6" rx="2" fill="var(--line-2)"/>
-            <rect x="14" y="48" width="40" height="22" rx="3" fill="var(--data)" opacity="0.7"/>
-            <rect x="58" y="48" width="40" height="22" rx="3" fill="var(--dev)"  opacity="0.55"/>
-            <rect x="102" y="48" width="40" height="22" rx="3" fill="var(--warn)" opacity="0.55"/>
-          </svg>
-        </div>
-        <h3>Apps web <span class="serif">para PYMEs</span></h3>
-        <p>Plataformas full-stack que automatizan inventario, reservas y reportería para clientes del sector servicios.</p>
-        <div class="foot"><span>+5 clientes · 2024–25</span><span>solicitar demo →</span></div>
-      </article>
-
-      <article class="proj reveal">
-        <div class="tags">
-          <span class="tag">scikit-learn</span><span class="tag">en curso</span>
-        </div>
-        <div class="preview">
-          <svg viewBox="0 0 160 100" style="width:90%; height:80%">
-            <circle cx="40" cy="50" r="20" fill="none" stroke="var(--data)" stroke-dasharray="3 3"/>
-            <circle cx="100" cy="60" r="18" fill="none" stroke="var(--dev)" stroke-dasharray="3 3"/>
-            <g fill="var(--data)"><circle cx="34" cy="46" r="2"/><circle cx="42" cy="52" r="2"/><circle cx="38" cy="56" r="2"/><circle cx="46" cy="44" r="2"/></g>
-            <g fill="var(--dev)"><circle cx="98" cy="58" r="2"/><circle cx="104" cy="62" r="2"/><circle cx="96" cy="66" r="2"/><circle cx="108" cy="56" r="2"/></g>
-          </svg>
-        </div>
-        <h3>Modelos de clasificación <span class="serif">supervisada</span></h3>
-        <p>Experimentos de ML con feature engineering y validación, parte de la maestría en IA.</p>
-        <div class="foot"><span>Roma · 2025 →</span><span>en desarrollo →</span></div>
-      </article>
-
-      <article class="proj reveal">
+      <!-- Tarjeta de contacto — siempre al final -->
+      <article class="proj reveal proj-cta">
         <div class="tags"><span class="tag">¿Tu próximo proyecto?</span></div>
         <h3>Tienes un dataset, una idea o un problema que <span class="serif">resolver con datos.</span></h3>
-        <p>Trabajo por proyecto o por horas — desde un dashboard puntual hasta un MVP completo con backend Java Spring Boot y modelo.</p>
+        <p>Trabajo por proyecto o por horas — desde un dashboard puntual hasta un análisis EDA completo con Python y Power BI.</p>
         <div class="foot">
           <a class="btn btn-primary" href="mailto:cesarespana.dev@gmail.com">Escríbeme <span class="arrow">→</span></a>
           <span>respuesta &lt; 24h</span>
@@ -587,6 +532,7 @@
 </div>
 
 <!-- ===================== SCRIPT ===================== -->
+<script src="projects-data.js"></script>
 <script src="analyst.js"></script>
 
 </body>
