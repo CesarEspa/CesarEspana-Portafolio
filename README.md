@@ -13,22 +13,21 @@ Portafolio personal con **dos perspectivas independientes**: desarrollador Full-
 ## Estructura
 
 ```
-index.html          ← landing "elige tu perspectiva"
-dev.html            ← portafolio dev full-stack
-analyst.html        ← portafolio data & IA
-style.css           ← estilos landing
-app.js              ← lógica landing (canvas neural, animaciones)
-projects-data.js    ← datos de proyectos (editar aquí para agregar proyectos)
+index.html              ← landing "elige tu perspectiva"
+style.css               ← estilos landing
+app.js                  ← lógica landing (canvas neural, animaciones)
+projects-data.js        ← datos de proyectos compartido entre vistas
+cesar.jpg               ← foto de perfil
+Cesar-Espana-CV.pdf     ← CV descargable
 dev/
-  dev.css           ← estilos vista full-stack
-  dev.js            ← lógica vista full-stack
+  dev.html              ← portafolio full-stack
+  dev.css               ← estilos
+  dev.js                ← lógica
 analyst/
-  analyst.css       ← estilos vista data & IA
-  analyst.js        ← lógica vista data & IA
-assets/
-  cesar.jpg                ← foto de perfil
-  Cesar-Espana-CV.pdf      ← CV descargable
-  diplomas/                ← certificados y diplomas PDF
+  analyst.html          ← portafolio data & IA
+  analyst.css           ← estilos
+  analyst.js            ← lógica
+Diplomados/             ← todos los PDFs de diplomas y certificados
 ```
 
 ## Agregar un proyecto
@@ -81,7 +80,7 @@ Copia cualquier bloque existente y ajusta los campos:
 
 - **Foto:** reemplaza `assets/cesar.jpg` (mantén el mismo nombre).
 - **CV:** reemplaza `assets/Cesar-Espana-CV.pdf`.
-- **Diplomas:** agrega PDFs en `assets/diplomas/` y referencia en el HTML correspondiente.
+- **Diplomas:** agrega PDFs en `Diplomados/` y referencia en el HTML correspondiente.
 - **Estilos dev:** edita `dev/dev.css`.
 - **Estilos data:** edita `analyst/analyst.css`.
 - **Disponibilidad:** cambia el pill `Disponible` en cada `<header>` de los tres HTMLs.
