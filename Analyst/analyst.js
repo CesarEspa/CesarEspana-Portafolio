@@ -428,14 +428,22 @@ function renderProjects(projects, containerId) {
         : `<span class="proj-req">solicitar acceso →</span>`}
     </div>`;
 
-    const previewHtml = p.image
-      ? `<div class="proj-preview proj-preview--img">
-           <img src="Projects/${p.image}" alt="${p.title}" loading="lazy" />
-         </div>`
-      : `<div class="proj-preview">
-           <span class="proj-glyph">${p.glyph || '◈'}</span>
-           <span class="proj-preview-label">${p.tags ? p.tags[0] : ''}</span>
-         </div>`;
+    let previewHtml;
+    if (p.embed) {
+      previewHtml = `<div class="proj-preview proj-preview--embed">
+        <iframe src="${p.embed}" frameborder="0" loading="lazy" allowfullscreen tabindex="-1"></iframe>
+        <div class="proj-preview-overlay"></div>
+      </div>`;
+    } else if (p.image) {
+      previewHtml = `<div class="proj-preview proj-preview--img">
+        <img src="Projects/${p.image}" alt="${p.title}" loading="lazy" />
+      </div>`;
+    } else {
+      previewHtml = `<div class="proj-preview">
+        <span class="proj-glyph">${p.glyph || '◈'}</span>
+        <span class="proj-preview-label">${p.tags ? p.tags[0] : ''}</span>
+      </div>`;
+    }
 
     const article = document.createElement('article');
     article.className = 'proj reveal';

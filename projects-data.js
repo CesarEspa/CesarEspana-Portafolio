@@ -10,9 +10,11 @@
      tags    — Array de etiquetas de tecnología
      glyph   — Símbolo decorativo en la preview: {} / π / λ / ∑ / ◈
      image   — Nombre de archivo de screenshot (ej: "DogEmotion.png").
-               Coloca el archivo en Analyst/Proyects/ para páginas de Analyst,
-               o en Develop/Proyects/ para páginas de Dev.
+               Coloca el archivo en Analyst/Projects/ para páginas de Analyst,
+               o en Develop/Projects/ para páginas de Dev.
                Si es null, se muestra el glyph como antes.
+     embed   — URL para incrustar un iframe en la preview (Power BI, Figma, etc.).
+               Tiene prioridad sobre image. Si es null, se usa image o glyph.
      demo    — URL del demo (null = no muestra botón Demo)
      repo    — URL de GitHub (null = no muestra botón GitHub)
      status  — "live" | "wip" | "demo" | "private"
@@ -101,12 +103,14 @@ const ANALYST_PROJECTS = [
 
   {
     title: "Análisis ICFES — Power BI Dashboard",
-    desc: "Datos ICFES limpiados con Python y Pandas, con dashboards interactivos para analizar rendimiento por región, institución y área.",
+    desc: "Datos ICFES Saber Pro limpiados con Python y Pandas. Dashboard interactivo en Power BI para explorar rendimiento por región, institución y área de conocimiento.",
     tags: ["Power BI", "Python · Pandas", "EDA"],
     glyph: "π",
-    demo: null,
+    image: "ICFES.png",
+    embed: null,
+    demo: "https://app.powerbi.com/view?r=eyJrIjoiNWFjYTRhMjAtOGNjOC00YjIxLTgxNjktYjY1YWMzMDRkODFmIiwidCI6IjY0ZWJjNzhlLTBhNWYtNDRlMS1hNTA0LTU3MTNlZmY2NGIzMyIsImMiOjR9",
     repo: null,
-    status: "demo",
+    status: "live",
     year: "2024",
     client: "cliente educativo"
   },
@@ -122,6 +126,20 @@ const ANALYST_PROJECTS = [
     status: "live",
     year: "2025",
     client: null
+  }, 
+
+  {
+    title: "Datos que Enseñan — Dashboard SGD",
+    desc: "Tablero de seguimiento del programa Computadores para Educar con 1 895 sedes en 33 departamentos. Modelo estrella en Power BI con 53 medidas DAX, mapa interactivo con Leaflet.js y dashboard HTML embebido. Desarrollado con Claude Desktop vía servidor MCP conectado a Power BI.",
+    tags: ["Power BI", "DAX", "MCP · Claude AI", "Leaflet.js"],
+    glyph: "⌬",
+    image: "DatosQueEnseñan.png",
+    embed: null,
+    demo: "https://app.powerbi.com/view?r=eyJrIjoiZjMxNzkzMjQtODEyMS00Mzk3LWFjOWUtM2IzMjAwMzlmYTIyIiwidCI6IjY0ZWJjNzhlLTBhNWYtNDRlMS1hNTA0LTU3MTNlZmY2NGIzMyIsImMiOjR9",
+    repo: null,
+    status: "live",
+    year: "2026",
+    client: "Computadores para Educar"
   },
 
   {

@@ -1289,18 +1289,36 @@ footer.foot {
 .proj-preview--img {
   padding: 0;
   overflow: hidden;
-  background: var(--bg);
+  background: var(--bg-card);
   height: 180px;
 }
 .proj-preview--img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
   display: block;
   transition: transform .4s ease;
 }
-.proj:hover .proj-preview--img img {
-  transform: scale(1.03);
+.proj:hover .proj-preview--img img { transform: scale(1.02); }
+
+/* Preview con iframe embebido (Power BI, demos, etc.) */
+.proj-preview--embed {
+  padding: 0;
+  overflow: hidden;
+  height: 180px;
+  position: relative;
+  background: var(--bg);
+}
+.proj-preview--embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  pointer-events: none;
+}
+.proj-preview-overlay {
+  position: absolute;
+  inset: 0;
 }
 
