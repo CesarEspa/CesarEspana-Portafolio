@@ -412,33 +412,39 @@ function renderProjects(projects, containerId) {
     const statusTag = `<span class="tag proj-status ${st.cls}">${st.label}</span>`;
 
     const demoBtn = p.demo
-      ? `<a class="btn btn-primary" href="${p.demo}" target="_blank" rel="noopener">Ver demo <span class="arrow">↗</span></a>`
+      ? `<a class="proj-link proj-link--primary" href="${p.demo}" target="_blank" rel="noopener">Ver demo <span class="arrow">↗</span></a>`
       : '';
     const repoBtn = p.repo
-      ? `<a class="btn" href="${p.repo}" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>`
+      ? `<a class="proj-link" href="${p.repo}" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>`
       : '';
-    const linksHtml = (demoBtn || repoBtn)
-      ? `<div class="proj-links">${demoBtn}${repoBtn}</div>`
-      : `<span class="proj-req">solicitar acceso →</span>`;
-
-    const clientSpan = p.client
+    const metaSpan = p.client
       ? `<span>${p.year} · ${p.client}</span>`
       : `<span>${p.year || ''}</span>`;
+
+    const footHtml = `<div class="foot">
+      ${metaSpan}
+      ${(demoBtn || repoBtn)
+        ? `<div class="proj-links">${demoBtn}${repoBtn}</div>`
+        : `<span class="proj-req">solicitar acceso →</span>`}
+    </div>`;
+
+    const previewHtml = p.image
+      ? `<div class="proj-preview proj-preview--img">
+           <img src="Projects/${p.image}" alt="${p.title}" loading="lazy" />
+         </div>`
+      : `<div class="proj-preview">
+           <span class="proj-glyph">${p.glyph || '◈'}</span>
+           <span class="proj-preview-label">${p.tags ? p.tags[0] : ''}</span>
+         </div>`;
 
     const article = document.createElement('article');
     article.className = 'proj reveal';
     article.innerHTML = `
       <div class="tags">${tags}${statusTag}</div>
-      <div class="proj-preview">
-        <span class="proj-glyph">${p.glyph || '◈'}</span>
-        <span class="proj-preview-label">${p.tags ? p.tags[0] : ''}</span>
-      </div>
+      ${previewHtml}
       <h3>${p.title || ''}</h3>
       <p>${p.desc || ''}</p>
-      <div class="foot">
-        ${clientSpan}
-        ${linksHtml}
-      </div>
+      ${footHtml}
     `;
     grid.appendChild(article);
   });
