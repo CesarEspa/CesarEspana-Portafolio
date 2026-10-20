@@ -43,8 +43,8 @@ const DEV_PROJECTS = [
   // },
 
   {
-    title: "AgroConecta — plataforma SPA para el sector agropecuario",
-    desc: "SPA full-stack desarrollada en equipo (Generations Colombia) con Angular en el frontend y Java Spring Boot en el backend. Gestiona usuarios, servicios y flujos de negocio del sector agropecuario con arquitectura REST y despliegue en GitHub Pages.",
+    title: "AgroConecta — plataforma SPA agro",
+    desc: "SPA en equipo con Angular + Java Spring Boot para gestionar usuarios y servicios del sector agropecuario.",
     tags: ["Java · Spring Boot", "Angular", "MySQL", "REST API"],
     glyph: "{}",
     image: "AgroConecta.png",
@@ -57,7 +57,7 @@ const DEV_PROJECTS = [
 
   {
     title: "API REST — reservas y servicios",
-    desc: "Backend en Node.js + Express con autenticación JWT y endpoints documentados, integrado con panel admin web para gestión de reservas.",
+    desc: "Backend en Node.js + Express con auth JWT, integrado a un panel admin para gestionar reservas.",
     tags: ["Node.js · Express", "MySQL", "REST API"],
     glyph: "/>",
     demo: null,
@@ -68,8 +68,8 @@ const DEV_PROJECTS = [
   },
 
   {
-    title: "Sistema de inventario — .NET + SQL Server",
-    desc: "Aplicación web con .NET para control de stock, generación de reportes y alertas de inventario. Arquitectura en capas con Entity Framework.",
+    title: "Sistema de inventario — .NET",
+    desc: "App web en .NET + Entity Framework para controlar stock y generar alertas de inventario.",
     tags: [".NET", "SQL Server", "Entity Framework"],
     glyph: "[ ]",
     demo: null,
@@ -103,7 +103,7 @@ const ANALYST_PROJECTS = [
 
   {
     title: "Análisis ICFES — Power BI Dashboard",
-    desc: "Datos ICFES Saber Pro limpiados con Python y Pandas. Dashboard interactivo en Power BI para explorar rendimiento por región, institución y área de conocimiento.",
+    desc: "Datos de Saber Pro limpiados con Python y Pandas, llevados a un dashboard interactivo por región e institución.",
     tags: ["Power BI", "Python · Pandas", "EDA"],
     glyph: "π",
     image: "ICFES.png",
@@ -117,7 +117,7 @@ const ANALYST_PROJECTS = [
 
   {
     title: "Reconocimiento de Emociones en Perros — CNN",
-    desc: "Clasifica la emoción de un perro —enojado, feliz, relajado o triste— directamente en el navegador. La CNN se entrenó en Python con 4 000 imágenes de Kaggle y corre en el cliente con TensorFlow.js. Antes de predecir, COCO-SSD filtra que la imagen realmente contenga un perro.",
+    desc: "CNN entrenada con Kaggle que detecta la emoción de un perro en el navegador, con TensorFlow.js y COCO-SSD.",
     tags: ["Python · Keras", "TensorFlow.js", "CNN", "COCO-SSD"],
     glyph: "⬡",
     image: "DogEmotion.png",
@@ -126,11 +126,11 @@ const ANALYST_PROJECTS = [
     status: "live",
     year: "2025",
     client: null
-  }, 
+  },
 
   {
     title: "Datos que Enseñan — Dashboard SGD",
-    desc: "Tablero de seguimiento del programa Computadores para Educar con 1 895 sedes en 33 departamentos. Modelo estrella en Power BI con 53 medidas DAX, mapa interactivo con Leaflet.js y dashboard HTML embebido. Desarrollado con Claude Desktop vía servidor MCP conectado a Power BI.",
+    desc: "Tablero de 1 895 sedes del programa Computadores para Educar, con modelo DAX en Power BI y mapa en Leaflet.js.",
     tags: ["Power BI", "DAX", "MCP · Claude AI", "Leaflet.js"],
     glyph: "⌬",
     image: "DatosQueEnseñan.png",
@@ -142,6 +142,32 @@ const ANALYST_PROJECTS = [
     client: "Computadores para Educar"
   },
 
+  {
+    title: "AI-XRay — Clasificador de Neumonía",
+    desc: "CNN con ResNet50 que detecta neumonía en radiografías pediátricas, con tracking en MLflow y API en FastAPI.",
+    tags: ["Python · Keras", "ResNet50", "MLflow", "FastAPI"],
+    glyph: "✛",
+    image: null,
+    embed: null,
+    demo: null,
+    repo: "https://github.com/CesarEspa/Proyecto_DataScience_IA",
+    status: "live",
+    year: "2026",
+    client: "Dev Senior Code"
+  },
 
+  {
+    title: "TFM — Cáncer de Pulmón en Imágenes de TC",
+    desc: "Trabajo de fin de máster: clasifica tomografías en Normal, Benigno o Maligno con CNN y transfer learning, con Grad-CAM y una app web propia.",
+    tags: ["Python · TensorFlow", "EfficientNetB0", "Grad-CAM", "FastAPI"],
+    glyph: "⊚",
+    image: null,
+    embed: null,
+    demo: null,
+    repo: "https://github.com/CesarEspa/Maestria",
+    status: "live",
+    year: "2026",
+    client: "Università G. Marconi · Roma"
+  },
 
 ];
