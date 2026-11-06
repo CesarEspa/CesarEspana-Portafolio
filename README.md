@@ -1,91 +1,40 @@
 # Portafolio · César L. España S.
 
-Portafolio personal con **dos perspectivas independientes**: desarrollador Full-Stack y Analista/Científico de Datos. Sin framework, sin build step — HTML, CSS y JS nativos, listo para GitHub Pages.
+Portafolio personal con **dos perspectivas**: Analista / Científico de Datos con IA y Desarrollador Full-Stack con IA.
+Sin framework ni build step: HTML, CSS y JS nativos, listo para GitHub Pages.
 
 ## Vistas
 
 | Ruta | Perfil |
 |---|---|
-| `index.html` | Landing de selección de perspectiva |
-| `dev.html` | Portafolio Full-Stack (Java · Spring Boot · Node.js · .NET) |
-| `analyst.html` | Portafolio Data Analyst / Data Science / IA |
+| `index.html` | Portada: elegir perspectiva |
+| `Analyst/analyst.html` | Datos, BI, machine learning e IA |
+| `Develop/dev.html` | Full-Stack (Java · Spring Boot · Angular · FastAPI) |
 
 ## Estructura
 
 ```
-index.html              ← landing "elige tu perspectiva"
-style.css               ← estilos landing
-app.js                  ← lógica landing (canvas neural, animaciones)
-projects-data.js        ← datos de proyectos compartido entre vistas
-cesar.jpg               ← foto de perfil
-Cesar-Espana-CV.pdf     ← CV descargable
-dev/
-  dev.html              ← portafolio full-stack
-  dev.css               ← estilos
-  dev.js                ← lógica
-analyst/
-  analyst.html          ← portafolio data & IA
-  analyst.css           ← estilos
-  analyst.js            ← lógica
-Diplomados/             ← todos los PDFs de diplomas y certificados
+index.html
+assets/
+  theme.css        ← sistema visual compartido (colores, tipografías, secciones)
+  theme.js         ← preloader de bandada, animaciones, proyectos, comparador, asistente IA
+projects-data.js   ← proyectos de ambas vistas (se editan aquí)
+Analyst/           ← analyst.html + Projects/ (capturas)
+Develop/           ← dev.html + Projects/ (capturas)
+Documentos/        ← CVs, foto y foto recortada (cesar-cutout.webp)
+Diplomados/        ← PDFs de certificados
 ```
 
-## Agregar un proyecto
+## Cómo editar
 
-Edita `projects-data.js`. Hay dos arrays:
+- **Proyectos:** agrega o cambia bloques en `projects-data.js`. La imagen va en `Analyst/Projects/` o `Develop/Projects/`.
+- **Color de acento:** cambia `--accent` y `--accent-2` al inicio de `assets/theme.css`.
+- **Animaciones:** el botón "Motion" del header las apaga; también se respetan las preferencias de movimiento reducido del sistema.
 
-- `DEV_PROJECTS` — aparece en `dev.html`
-- `ANALYST_PROJECTS` — aparece en `analyst.html`
+## Ver en local
 
-Copia cualquier bloque existente y ajusta los campos:
-
-```js
-{
-  title:  "Nombre del proyecto",
-  desc:   "Descripción breve (1–2 oraciones).",
-  tags:   ["Tech 1", "Tech 2"],
-  glyph:  "{}",          // {} / π / λ / ∑ / ◈ / />  / [ ]
-  demo:   "https://...", // null = sin botón Demo
-  repo:   "https://github.com/CesarEspa/...", // null = sin botón GitHub
-  status: "live",        // "live" | "wip" | "demo" | "private"
-  year:   "2025",
-  client: "nombre cliente" // o null
-}
+```bash
+python -m http.server 5510
 ```
 
-## Stack de tecnologías
-
-**Dev:** Java · Spring Boot · Angular · Node.js · Express · .NET · MySQL · SQL Server · REST · JWT
-
-**Data:** Python · Pandas · scikit-learn · Power BI · SQL · Excel · EDA · ML supervisado
-
-**Formación:** Maestría en IA (Roma) · DS4A Correlation One · Talento Tech Full-Stack · Oracle / Alura · Misión TIC
-
-## Publicar en GitHub Pages
-
-1. Ve a **Settings → Pages** del repositorio.
-2. *Source*: `Deploy from a branch` → Branch: `main` / `/ (root)` → **Save**.
-3. Tu sitio estará disponible en `https://CesarEspa.github.io/CesarEspana-Portafolio/` en ~1 minuto.
-
-## Dominio personalizado (opcional)
-
-1. En tu DNS añade un `CNAME` apuntando a `CesarEspa.github.io`.
-2. En **Settings → Pages → Custom domain**, escribe el dominio y activa **Enforce HTTPS**.
-3. Crea un archivo `CNAME` en la raíz con solo el dominio:
-   ```
-   cesarespana.dev
-   ```
-
-## Personalizar
-
-- **Foto:** reemplaza `assets/cesar.jpg` (mantén el mismo nombre).
-- **CV:** reemplaza `assets/Cesar-Espana-CV.pdf`.
-- **Diplomas:** agrega PDFs en `Diplomados/` y referencia en el HTML correspondiente.
-- **Estilos dev:** edita `dev/dev.css`.
-- **Estilos data:** edita `analyst/analyst.css`.
-- **Disponibilidad:** cambia el pill `Disponible` en cada `<header>` de los tres HTMLs.
-- **Redes sociales:** busca `github.com/CesarEspa` y `linkedin.com` en los HTML para actualizar los enlaces del footer.
-
----
-
-Tipografías: Geist · Geist Mono · Instrument Serif (Google Fonts). Sin dependencias locales.
+Luego abre http://localhost:5510
