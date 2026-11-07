@@ -67,12 +67,12 @@ const DEV_PROJECTS = [
 
   {
     title: "AgroConecta — e-commerce",
-    desc: "En equipo de 4: API REST por capas con roles (administrador y comprador), DTOs y manejo global de excepciones para catálogo, carrito, pedidos y panel admin.",
-    tags: ["Angular", "Java · Spring Boot", "JPA / Hibernate", "PostgreSQL · JWT"],
+    desc: "En equipo de 4: SPA en JavaScript con router propio que consume una API REST en Spring Boot con JWT y roles (administrador y cliente). Catálogo, carrito, pedidos y panel admin, con demo funcional sin servidor.",
+    tags: ["JavaScript · SPA", "Java · Spring Boot", "PostgreSQL · JWT", "Bootstrap 5"],
     glyph: "{}",
-    image: "AgroConecta.png",
-    demo: "https://danielvega825.github.io/AgroConecta-t8-SPAs/#/",
-    repo: "https://github.com/DanielVega825/AgroConecta-t8-SPAs",
+    image: "AgroConecta.webp",
+    demo: "https://cesarespa.github.io/AgroConecta/",
+    repo: "https://github.com/CesarEspa/AgroConecta",
     status: "live",
     year: "2025–26",
     client: "Generation Colombia"

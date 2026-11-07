@@ -158,7 +158,7 @@ public class PedidoController {
   private final PedidoService service;
 
   <b>@PostMapping</b>
-  <b>@PreAuthorize</b>("hasRole('COMPRADOR')")
+  <b>@PreAuthorize</b>("hasRole('CLIENTE')")
   public ResponseEntity&lt;PedidoDTO&gt; crear(
       <b>@Valid @RequestBody</b> CrearPedidoDTO dto,
       Authentication auth) {
@@ -172,7 +172,7 @@ public class PedidoController {
         </div>
         <div class="layer after">
           <span class="tag">Producto</span>
-          <img class="after-img" src="Projects/AgroConecta.png" alt="Pantalla de AgroConecta" loading="lazy">
+          <img class="after-img" src="Projects/AgroConecta.webp" alt="Pantalla de AgroConecta" loading="lazy">
         </div>
         <div class="divider"><span>⇄</span></div>
       </div>
@@ -187,7 +187,7 @@ public class PedidoController {
     <article class="metric reveal">
       <div class="num"><span data-count="100">0</span><span class="unit">%</span></div>
       <h3>Flujos de negocio</h3>
-      <p>Catálogo, carrito, pedidos y panel admin de AgroConecta, con roles de administrador y comprador.</p>
+      <p>Catálogo, carrito, pedidos y panel admin de AgroConecta, con roles de administrador y cliente.</p>
       <span class="src">AgroConecta · equipo de 4</span>
     </article>
     <article class="metric reveal" style="--d:.1s">
@@ -291,7 +291,7 @@ public class PedidoController {
             <span class="acc-title">Desarrollador Junior Full-Stack Java<small>Generation Colombia</small></span>
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
-          <div class="acc-body"><div><p>Proyecto final AgroConecta en equipo de 4: Angular, Java, Spring Boot, JPA/Hibernate, PostgreSQL y JWT, con Scrum y flujo de pull requests.</p>
+          <div class="acc-body"><div><p>Proyecto final AgroConecta en equipo de 4: SPA en JavaScript, Java, Spring Boot, JPA/Hibernate, PostgreSQL y JWT, con Scrum y flujo de pull requests.</p>
             <button class="btn" type="button" data-pdf="../Diplomados/Cesar Libardo España Salguero - Desarrollador Junior FULL-STACK JAVA.pdf" data-title="Desarrollador Junior Full-Stack Java · Generation Colombia">Ver diploma <span class="arr">↗</span></button></div></div>
         </div>
         <div class="acc-item">
