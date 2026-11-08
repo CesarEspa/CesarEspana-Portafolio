@@ -32,7 +32,7 @@ const DEV_PROJECTS = [
     tags: ["Spring Boot 3 · JWT", "Angular", "PostgreSQL · Flyway", "FastAPI · Claude API"],
     glyph: "X",
     image: "CesarX.webp",
-    demo: null,   // la demo de GitHub Pages da 404 (nov 2026); poner la URL cuando vuelva a estar en línea
+    demo: "https://cesarespa.github.io/CesarX-Analytics/",
     repo: "https://github.com/CesarEspa/CesarX-Analytics",
     status: "live",
     year: "2026",
