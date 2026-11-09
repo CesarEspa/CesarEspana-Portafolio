@@ -490,7 +490,7 @@ Responde siempre en español, en máximo 3 frases, cercano y profesional. No inv
     contratar: 'César une datos e ingeniería: es Magíster en IA, construye tableros en Power BI para clientes reales y también APIs con Spring Boot y FastAPI. Valida cada cifra antes de entregar; en su TFM demostró cómo una mala partición infla la exactitud de 85,7% a 99,8%.',
     resumen: 'Ingeniero en Sistemas y Magíster en IA con más de 1 año como analista de datos y desarrollador freelance. Trabaja con Python, Power BI, SQL, machine learning y Java/Spring Boot.',
     stack: page === 'dev'
-      ? 'Backend: Java, Spring Boot, Spring Security/JWT, FastAPI. Frontend: Angular y JavaScript. Datos: PostgreSQL, MySQL, MongoDB. IA: scikit-learn, TensorFlow, Claude API y MCP.'
+      ? 'Backend: Java, Spring Boot, Spring Security/JWT, FastAPI. Frontend: Angular y JavaScript. Datos: PostgreSQL, MySQL, MongoDB. IA: scikit-learn, TensorFlow, Claude Code y MCP.'
       : 'Datos: Python, Pandas, SQL, Power BI y DAX. Machine learning: scikit-learn, TensorFlow/Keras, MLflow y PySpark. IA generativa: Claude, MCP y Ollama.',
     email: 'Asunto: Oportunidad para colaborar\n\nHola César,\n\nVi tu portafolio y me interesa tu perfil en datos e IA. Tengo un proyecto donde podrías encajar. ¿Hablamos 15 minutos esta semana?\n\nGracias,',
     default: 'Puedo contarte sobre su experiencia, sus proyectos (Dashboard SGD, TFM, AI-XRay, CesarX), su stack o redactarte un correo para contactarlo.'

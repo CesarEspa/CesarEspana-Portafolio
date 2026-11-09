@@ -40,6 +40,19 @@ const DEV_PROJECTS = [
   },
 
   {
+    title: "AgroConecta — e-commerce",
+    desc: "En equipo de 4: SPA en JavaScript con router propio que consume una API REST en Spring Boot con JWT y roles (administrador y cliente). Catálogo, carrito, pedidos y panel admin, con demo funcional sin servidor.",
+    tags: ["JavaScript · SPA", "Java · Spring Boot", "PostgreSQL · JWT", "Bootstrap 5"],
+    glyph: "{}",
+    image: "AgroConecta-cover.webp",
+    demo: "https://cesarespa.github.io/AgroConecta/",
+    repo: "https://github.com/CesarEspa/AgroConecta",
+    status: "live",
+    year: "2025–26",
+    client: "Generation Colombia"
+  },
+
+  {
     title: "PagoClaro — conciliación de pagos",
     desc: "Servicio de conciliación idempotente: si un registro llega dos veces, no se duplica. Reglas de negocio, manejo de errores y 15 pruebas, incluida concurrencia.",
     tags: ["Java · Spring Boot", "SQL · Oracle", "JUnit"],
@@ -63,19 +76,6 @@ const DEV_PROJECTS = [
     status: "demo",
     year: "2026",
     client: "Prueba técnica"
-  },
-
-  {
-    title: "AgroConecta — e-commerce",
-    desc: "En equipo de 4: SPA en JavaScript con router propio que consume una API REST en Spring Boot con JWT y roles (administrador y cliente). Catálogo, carrito, pedidos y panel admin, con demo funcional sin servidor.",
-    tags: ["JavaScript · SPA", "Java · Spring Boot", "PostgreSQL · JWT", "Bootstrap 5"],
-    glyph: "{}",
-    image: "AgroConecta-cover.webp",
-    demo: "https://cesarespa.github.io/AgroConecta/",
-    repo: "https://github.com/CesarEspa/AgroConecta",
-    status: "live",
-    year: "2025–26",
-    client: "Generation Colombia"
   },
 
   {

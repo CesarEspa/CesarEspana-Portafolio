@@ -775,6 +775,8 @@ body::after {
 .journey-side .sec-title { font-size: clamp(48px, 6vw, 96px); }
 .journey-side p { color: var(--muted); font-size: 14px; margin-top: 18px; }
 .acc { border-top: 1px solid var(--line); }
+.acc-group { margin: 0 0 16px; }
+.acc + .acc-group { margin-top: 48px; }
 .acc-item { border-bottom: 1px solid var(--line); }
 .acc-head {
   width: 100%;
