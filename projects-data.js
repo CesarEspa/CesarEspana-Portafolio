@@ -27,9 +27,9 @@
 const DEV_PROJECTS = [
 
   {
-    title: "CesarX Analytics — ETFs con LLM",
-    desc: "Backend en Spring Boot 3 con JWT y migraciones Flyway, microservicio FastAPI que clasifica el sentimiento de noticias con Claude y un modelo de scikit-learn que predice la tendencia.",
-    tags: ["Spring Boot 3 · JWT", "Angular", "PostgreSQL · Flyway", "FastAPI · Claude API"],
+    title: "CesarX Analytics — ETFs con IA",
+    desc: "Backend en Spring Boot 3 con JWT y migraciones Flyway, y microservicio FastAPI que compara modelos de scikit-learn contra la media histórica para proyectar a cinco plazos, con su margen de error y una explicación basada en el historial y las noticias.",
+    tags: ["Spring Boot 3 · JWT", "Angular", "PostgreSQL · Flyway", "FastAPI · scikit-learn"],
     glyph: "X",
     image: "CesarX.webp",
     demo: "https://cesarespa.github.io/CesarX-Analytics/",
