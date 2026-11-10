@@ -84,8 +84,8 @@ const DEV_PROJECTS = [
     tags: ["Python · Keras", "ResNet50", "MLflow", "FastAPI"],
     glyph: "✛",
     image: "AI-XRay-MLflow.webp",
-    demo: null,
-    repo: "https://github.com/CesarEspa/Proyecto_DataScience_IA",
+    demo: "https://cesarespa.github.io/AI-Xray-Pneumonia/",
+    repo: "https://github.com/CesarEspa/AI-Xray-Pneumonia",
     status: "live",
     year: "2026",
     client: "Master AI & Data Science"
@@ -144,8 +144,8 @@ const ANALYST_PROJECTS = [
     tags: ["Python · Keras", "ResNet50", "MLflow · PySpark", "FastAPI"],
     glyph: "✛",
     image: "AI-XRay.webp",
-    demo: null,
-    repo: "https://github.com/CesarEspa/Proyecto_DataScience_IA",
+    demo: "https://cesarespa.github.io/AI-Xray-Pneumonia/",
+    repo: "https://github.com/CesarEspa/AI-Xray-Pneumonia",
     status: "live",
     year: "2026",
     client: "Master AI & Data Science"
